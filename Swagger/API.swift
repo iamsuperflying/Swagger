@@ -12,6 +12,7 @@ import HandyJSON
 class API: HandyJSON {
     
     var name: String?
+    
     var post: RequestMethod?
     var get: RequestMethod?
     
@@ -21,15 +22,26 @@ class API: HandyJSON {
         }
     }
     
+    var summary:String {
+        get {
+            return post?.summary ?? get?.summary ?? ""
+        }
+    }
+    var operationId: String?
+    var parameters = [Parameter]()
+    var responses: Responses?
+    var deprecated = false
+    
     var tags:Array<String>? {
         get {
-            if let p_tags = post?.tags {
-                return p_tags
-            }
-            if let g_tags = get?.tags {
-                return g_tags
-            }
-            return nil
+            return post?.tags ?? get?.tags ?? nil
+//            if let p_tags = post?.tags {
+//                return p_tags
+//            }
+//            if let g_tags = get?.tags {
+//                return g_tags
+//            }
+//            return nil
         }
     }
     

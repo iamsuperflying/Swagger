@@ -12,7 +12,7 @@ import HandyJSON
 class RequestMethod: HandyJSON {
 
     var tags:Array<String>?
-    var summary:String?
+    var summary = ""
     var operationId: String?
     var parameters = [Parameter]()
     var responses: Responses?

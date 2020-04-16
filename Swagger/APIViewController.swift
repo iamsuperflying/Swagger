@@ -11,6 +11,8 @@ import UIKit
 class APIViewController: UIViewController {
     
     var api: API?
+    var definitions = Dictionary<String, HTTPObject>()
+    
     @IBOutlet weak var methodLabel: UILabel!
     
     override func viewDidLoad() {

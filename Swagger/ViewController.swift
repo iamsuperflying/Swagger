@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let groups = ["用户APP接口文档","商户APP接口文档"];
     let url = "https://testserver.cheyoudaren.com/v2/api-docs"
     
+    let identifier = "MasterAPICell"
     
     var metaResponse: MetaResponse?
     var tags = [Tag]() {
@@ -31,7 +32,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+        
+        tagsView.register(UINib(nibName:identifier, bundle: nibBundle), forCellReuseIdentifier:identifier)
         requestAPI()
 
     }
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return self.tags.count
@@ -68,19 +71,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let tag = tags[section]
+        return metaResponse?.pathsMapping[tag.name]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MasterAPICell
         let tag = self.tags[indexPath.section]
         
-        cell?.textLabel?.text = tag.tag_description
-        
-        return cell!;
+        cell.titleLabel.text = metaResponse?.pathsMapping[tag.name]?[indexPath.row].summary
+        cell.detailLabel.text = metaResponse?.pathsMapping[tag.name]?[indexPath.row].name
+        return cell;
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -97,7 +99,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         if let api = metaResponse?.pathsMapping[tag.name] {
             let apiController = APIViewController()
             apiController.api = api.first
-            self.navigationController?.pushViewController(apiController, animated: true)
+//            self.navigationController?.pushViewController(apiController, animated: true)
+            
+            splitViewController?.showDetailViewController(apiController, sender: apiController)
         }
         
     }

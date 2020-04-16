@@ -29,9 +29,51 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URB-2E-ER1">
+                    <rect key="frame" x="0.0" y="84" width="800" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLm-2a-7yk">
+                            <rect key="frame" x="20" y="19" width="109" height="23"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" red="0.89422765544041449" green="0.54813861781509021" blue="0.11353376894957114" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8O-uW-gp9">
+                            <rect key="frame" x="660" y="10" width="120" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="XAH-hw-Vgc"/>
+                                <constraint firstAttribute="height" constant="40" id="wwn-kb-9eY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <state key="normal" title="Try it out"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderCorlor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GFL-xw-LdP"/>
+                        <constraint firstItem="cLm-2a-7yk" firstAttribute="centerY" secondItem="URB-2E-ER1" secondAttribute="centerY" id="PK6-35-hLU"/>
+                        <constraint firstItem="cLm-2a-7yk" firstAttribute="leading" secondItem="URB-2E-ER1" secondAttribute="leading" constant="20" id="RIY-le-oqO"/>
+                        <constraint firstAttribute="trailing" secondItem="k8O-uW-gp9" secondAttribute="trailing" constant="20" id="Tei-Ai-Ugo"/>
+                        <constraint firstItem="k8O-uW-gp9" firstAttribute="centerY" secondItem="URB-2E-ER1" secondAttribute="centerY" id="auk-kk-0td"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="URB-2E-ER1" secondAttribute="trailing" id="GZJ-lp-sCM"/>
+                <constraint firstItem="URB-2E-ER1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VMc-rq-Vrt"/>
+                <constraint firstItem="URB-2E-ER1" firstAttribute="top" secondItem="Goh-2f-8uc" secondAttribute="bottom" constant="20" id="eCx-Yb-ftP"/>
                 <constraint firstItem="Goh-2f-8uc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="iLr-UZ-81r"/>
                 <constraint firstItem="Goh-2f-8uc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lKg-Ub-Ky7"/>
             </constraints>
