@@ -15,6 +15,12 @@ class API: HandyJSON {
     var post: RequestMethod?
     var get: RequestMethod?
     
+    var tag:String {
+        get {
+            return tags?.first ?? ""
+        }
+    }
+    
     var tags:Array<String>? {
         get {
             if let p_tags = post?.tags {

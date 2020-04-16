@@ -44,24 +44,8 @@ class ViewController: UIViewController {
             if let JSON = response.value {
                 
                 if let metaResponse = MetaResponse.deserialize(from: JSON as? NSDictionary) {
-                    
-//                    var pathsMapping = Dictionary<String, Array<API>>()
-//                    metaResponse.paths.forEach { (api: API) in
-//                        var apis = Array<API>()
-//                        api.tags?.forEach({ (name) in
-//                            
-//                            if let apis = pathsMapping[name] {
-//                                apis.append(api)
-//                            } else {
-//                                
-//                            }
-//                            
-//                        })
-//                        
-//                    }
-                    
-                    
-                    // metaResponse.pathsMapping = Dictionary(grouping: metaResponse.paths) { $0.post?.tags }
+
+                    metaResponse.pathsMapping = Dictionary(grouping: metaResponse.paths) { $0.tag }
                     self.metaResponse = metaResponse
                     self.tags = metaResponse.tags
                 }
