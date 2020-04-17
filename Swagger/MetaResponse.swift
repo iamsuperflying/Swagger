@@ -18,7 +18,7 @@ class MetaResponse: HandyJSON {
     var paths = [API]()
     
     var pathsMapping = Dictionary<String, Array<API>>()
-    var definitions = Dictionary<String, HTTPObject>()
+    var definitions: Dictionary<String, HTTPObject>?
     
     required init() {}
     
@@ -42,17 +42,5 @@ class MetaResponse: HandyJSON {
                 return nil
             })
         
-//        mapper <<<
-//        self.definitions <-- TransformOf<Dictionary<String, Any>, Dictionary<String, Any>>(
-//            fromJSON: { (definitions) -> Dictionary<String, Any>? in
-//                definitions?.compactMapValues({ (<#Any#>) -> T? in
-//                    <#code#>
-//                })
-//                
-//                return nil
-//        }, toJSON: { (value) -> Dictionary<String, Any>? in
-//            return nil
-//        })
-
     }
 }

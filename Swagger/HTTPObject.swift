@@ -12,7 +12,7 @@ import HandyJSON
 class HTTPObject: HandyJSON {
     
     var type = "object"
-    var properties = Dictionary<String, Property>()
+    var properties: Dictionary<String, Property>?
     var title = ""
     
     required init() {}

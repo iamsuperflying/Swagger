@@ -80,7 +80,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MasterAPICell
         let tag = self.tags[indexPath.section]
         
-        cell.titleLabel.text = metaResponse?.pathsMapping[tag.name]?[indexPath.row].summary
+        cell.titleLabel.text = metaResponse?.pathsMapping[tag.name]?[indexPath.row].httpMethod?.summary
         cell.detailLabel.text = metaResponse?.pathsMapping[tag.name]?[indexPath.row].name
         return cell;
     }
@@ -98,7 +98,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         let tag = tags[indexPath.section]
         if let api = metaResponse?.pathsMapping[tag.name] {
             let apiController = APIViewController()
-            apiController.api = api.first
+            apiController.api = api[indexPath.row]
+            apiController.definitions = metaResponse?.definitions
 //            self.navigationController?.pushViewController(apiController, animated: true)
             
             splitViewController?.showDetailViewController(apiController, sender: apiController)

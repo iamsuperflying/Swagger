@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>解析设置</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>类前缀</string>
+			<key>Key</key>
+			<string>name_preference</string>
+			<key>DefaultValue</key>
+			<string>RS</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Description</key>
+			<string>开启后将为基本数据类型全部转为 NSNumber</string>
+			<key>TrueConfirmationPrompt</key>
+			<dict>
+				<key>DenyText</key>
+				<string>木有</string>
+				<key>ConfirmText</key>
+				<string>有</string>
+				<key>Type</key>
+				<string>PSConfirmationPrompt</string>
+				<key>Prompt</key>
+				<string>有那个必要么?</string>
+				<key>Title</key>
+				<string>选项开启</string>
+			</dict>
+			<key>Title</key>
+			<string>基本数据类型转 NSNumber</string>
+			<key>Key</key>
+			<string>enabled_preference</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

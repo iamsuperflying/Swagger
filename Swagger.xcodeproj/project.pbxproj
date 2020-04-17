@@ -18,6 +18,10 @@
 		DC606A7C2448411400E45C89 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A7B2448411400E45C89 /* Scheme.swift */; };
 		DC606A7F2448438C00E45C89 /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A7D2448438B00E45C89 /* APIViewController.swift */; };
 		DC606A802448438C00E45C89 /* APIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC606A7E2448438C00E45C89 /* APIViewController.xib */; };
+		DC606A862449374900E45C89 /* ParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A852449374900E45C89 /* ParameterView.swift */; };
+		DC606A882449375500E45C89 /* ParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC606A872449375500E45C89 /* ParameterView.xib */; };
+		DC606A8A24497A9600E45C89 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A8924497A9600E45C89 /* Items.swift */; };
+		DC606A8C244994F500E45C89 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DC606A8B244994F400E45C89 /* Settings.bundle */; };
 		DC72AC5524487B9F00BD0425 /* HTTPObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5424487B9F00BD0425 /* HTTPObject.swift */; };
 		DC72AC5724487DC700BD0425 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5624487DC700BD0425 /* Property.swift */; };
 		DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */; };
@@ -43,6 +47,10 @@
 		DC606A7B2448411400E45C89 /* Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
 		DC606A7D2448438B00E45C89 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
 		DC606A7E2448438C00E45C89 /* APIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APIViewController.xib; sourceTree = "<group>"; };
+		DC606A852449374900E45C89 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
+		DC606A872449375500E45C89 /* ParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterView.xib; sourceTree = "<group>"; };
+		DC606A8924497A9600E45C89 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		DC606A8B244994F400E45C89 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Swagger/Settings.bundle; sourceTree = "<group>"; };
 		DC72AC5424487B9F00BD0425 /* HTTPObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPObject.swift; sourceTree = "<group>"; };
 		DC72AC5624487DC700BD0425 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAPICell.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 				DC606A7B2448411400E45C89 /* Scheme.swift */,
 				DC72AC5424487B9F00BD0425 /* HTTPObject.swift */,
 				DC72AC5624487DC700BD0425 /* Property.swift */,
+				DC606A8924497A9600E45C89 /* Items.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -119,6 +128,8 @@
 			children = (
 				DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */,
 				DC72AC5C2448A27400BD0425 /* MasterAPICell.xib */,
+				DC606A852449374900E45C89 /* ParameterView.swift */,
+				DC606A872449375500E45C89 /* ParameterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 		DCC5454B2446E4C000B0C61D = {
 			isa = PBXGroup;
 			children = (
+				DC606A8B244994F400E45C89 /* Settings.bundle */,
 				DCC545562446E4C000B0C61D /* Swagger */,
 				DCC545552446E4C000B0C61D /* Products */,
 				351845D30011CDB7DF0A337D /* Pods */,
@@ -218,11 +230,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC606A882449375500E45C89 /* ParameterView.xib in Resources */,
 				DCC545642446E4C300B0C61D /* LaunchScreen.storyboard in Resources */,
 				DCC545612446E4C300B0C61D /* Assets.xcassets in Resources */,
 				DC72AC5D2448A27400BD0425 /* MasterAPICell.xib in Resources */,
 				DCC5455F2446E4C000B0C61D /* Main.storyboard in Resources */,
 				DC606A802448438C00E45C89 /* APIViewController.xib in Resources */,
+				DC606A8C244994F500E45C89 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC606A8A24497A9600E45C89 /* Items.swift in Sources */,
 				DC72AC5724487DC700BD0425 /* Property.swift in Sources */,
 				DC606A782448405B00E45C89 /* Responses.swift in Sources */,
 				DCC5455C2446E4C000B0C61D /* ViewController.swift in Sources */,
@@ -268,6 +283,7 @@
 				DC606A6E2446F60D00E45C89 /* Tag.swift in Sources */,
 				DC606A7624483F8200E45C89 /* Parameter.swift in Sources */,
 				DCC545582446E4C000B0C61D /* AppDelegate.swift in Sources */,
+				DC606A862449374900E45C89 /* ParameterView.swift in Sources */,
 				DC606A74244826F000E45C89 /* RequestMethod.swift in Sources */,
 				DC606A702448027C00E45C89 /* API.swift in Sources */,
 				DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */,

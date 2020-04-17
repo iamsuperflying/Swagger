@@ -11,7 +11,12 @@ import HandyJSON
 
 class Scheme: HandyJSON {
 
-    var reference = ""
+    var reference: String?
+    
+    /// 引用的类
+    var ref: String? {
+        reference?.components(separatedBy: "/").last
+    }
     
     required init() {}
     

@@ -12,39 +12,20 @@ import HandyJSON
 class API: HandyJSON {
     
     var name: String?
-    
     var post: RequestMethod?
     var get: RequestMethod?
     
+    var httpMethod: RequestMethod? {
+        (post != nil) ? post : get
+    }
+    
     var tag:String {
-        get {
-            return tags?.first ?? ""
-        }
+        httpMethod?.tags?.first ?? ""
     }
     
-    var summary:String {
-        get {
-            return post?.summary ?? get?.summary ?? ""
-        }
+    var method: String {
+        (post != nil) ? "POST" : "GET"
     }
-    var operationId: String?
-    var parameters = [Parameter]()
-    var responses: Responses?
-    var deprecated = false
-    
-    var tags:Array<String>? {
-        get {
-            return post?.tags ?? get?.tags ?? nil
-//            if let p_tags = post?.tags {
-//                return p_tags
-//            }
-//            if let g_tags = get?.tags {
-//                return g_tags
-//            }
-//            return nil
-        }
-    }
-    
     
     required init() {}
 }
