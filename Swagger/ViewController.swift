@@ -92,7 +92,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let nav = UINavigationController(rootViewController: APIViewController())
 //        self .present(nav, animated: true, completion: nil)
         
         let tag = tags[indexPath.section]
@@ -101,8 +100,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
             apiController.api = api[indexPath.row]
             apiController.definitions = metaResponse?.definitions
 //            self.navigationController?.pushViewController(apiController, animated: true)
-            
-            splitViewController?.showDetailViewController(apiController, sender: apiController)
+            let nav = UINavigationController(rootViewController: apiController)
+            splitViewController?.showDetailViewController(nav, sender: nav)
         }
         
     }

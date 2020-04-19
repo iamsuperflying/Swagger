@@ -55,6 +55,18 @@
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Description</key>
+			<string>开启后将使每种类型的所有属性为可选</string>
+			<key>Title</key>
+			<string>将所有属性设为可选</string>
+			<key>Key</key>
+			<string>enabled_preference</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>

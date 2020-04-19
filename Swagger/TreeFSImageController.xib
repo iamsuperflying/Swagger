@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TreeFSImageController" customModule="Swagger" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BFS" translatesAutoresizingMaskIntoConstraints="NO" id="G2o-hg-df8">
+                    <rect key="frame" x="0.0" y="64" width="414" height="715"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="解析对象的顺序是 对象A -&gt; A -&gt; B -&gt; AA -&gt; AB -&gt; BA -&gt; AAA -&gt; AAB -&gt; AAC -&gt; AACA" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM5-aF-GBr">
+                    <rect key="frame" x="0.0" y="799" width="414" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FM5-aF-GBr" secondAttribute="trailing" id="1ke-ph-2hm"/>
+                <constraint firstItem="FM5-aF-GBr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2id-mz-okh"/>
+                <constraint firstItem="G2o-hg-df8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MxV-mr-FzE"/>
+                <constraint firstItem="G2o-hg-df8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="XSu-tX-HgH"/>
+                <constraint firstItem="FM5-aF-GBr" firstAttribute="top" secondItem="G2o-hg-df8" secondAttribute="bottom" constant="20" id="ZL4-Wr-QUe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FM5-aF-GBr" secondAttribute="bottom" constant="20" id="bDB-pi-F11"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G2o-hg-df8" secondAttribute="trailing" id="tFd-tH-1ng"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="108"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BFS" width="1128" height="384"/>
+    </resources>
+</document>
