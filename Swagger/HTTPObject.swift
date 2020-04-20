@@ -16,23 +16,38 @@ class HTTPObject: HandyJSON {
     
     var title = ""
     
+    // MARK: - Tree
+    /// 层级
+    var level = 0
+    /// 子节点
+    var children = Array<HTTPObject>()
+    /// 父节点
+    weak var parent: HTTPObject?
+    
+    /// 没有子节点的节点
+    var isLeaf: Bool {
+        return self.childrens?.count ?? 0 <= 0
+    }
+    
+    lazy var childrens = {
+        self.properties?.compactMap({
+            Reformer.definitions()[$0.ref]
+        })
+    }()
+    
     required init() {}
     
+}
+
+// MARK: - Computed
+extension HTTPObject {
+
+}
+
+// MARK: - Mapping
+extension HTTPObject {
     func mapping(mapper: HelpingMapper) {
         mapper <<<
-        self.properties <-- TransformOf<Array<Property>, Dictionary<String, Dictionary<String, Any>>> (
-            fromJSON: { (propDict) -> Array<Property>? in
-                
-                propDict?.compactMap({
-                    if let prop = Property.deserialize(from: $0.value) {
-                        prop.name = $0.key
-                        return prop
-                    }
-                    return nil
-                })
-
-        }, toJSON:{ (bbb) -> Dictionary<String, Dictionary<String, Any>>? in
-            return nil
-        })
+            self.properties <-- Reformer<Property>.Reformer()
     }
 }

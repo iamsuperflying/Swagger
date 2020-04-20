@@ -165,41 +165,41 @@ class APIViewController: UIViewController {
 
 extension APIViewController {
     
-    func traverse() {
-        let resultStr = api?.httpMethod?.parameters?.reduce("", { (result, parameter) -> String in
-             return result + closure(ref: parameter.schema?.ref)
-        })
-        
-        print(resultStr)
-    }
+//    func traverse() {
+//        let resultStr = api?.httpMethod?.parameters?.reduce("", { (result, parameter) -> String in
+//             return result + closure(ref: parameter.schema?.ref)
+//        })
+//
+//        print(resultStr)
+//    }
     
     /// 遍历 level 0
-    func closure(ref: String?) -> String {
-        
-        var resultStr = ""
-        if let $ref = ref,
-            let resultString = definitions[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
-                resultStr + prop.propertyFormat()
-            }) {
-            resultStr = resultString
-        }
-        return resultStr
-        
-    }
+//    func closure(ref: String?) -> String {
+//
+//        var resultStr = ""
+//        if let $ref = ref,
+//            let resultString = definitions[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
+//                resultStr + prop.propertyFormat()
+//            }) {
+//            resultStr = resultString
+//        }
+//        return resultStr
+//
+//    }
     
     //MARK: - 非递归广度优先实现
     func BFS() {
         var stack = [Property]()
         
         if let request = api?.httpMethod?.request {
-            if let props = definitions[request]?.props?.filter({ (prop) -> Bool in
+            if let props = definitions[request]?.properties?.filter({ (prop) -> Bool in
                 print("prop name is " + (prop.name)!)
                 return prop.ref != nil
             }) {
                 stack = props
             }
             ///  $0.ref != nil ? $0 : nil
-            if let props = definitions[request]?.props?.compactMap({ $0.ref != nil ? $0 : nil }) {
+            if let props = definitions[request]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
                 stack.append(contentsOf: props)
             }
             
@@ -210,11 +210,11 @@ extension APIViewController {
         while stack.count > 0 {
             prop = stack.removeFirst()
             print("prop name is " + (prop?.name)!)
-            if let children = prop?.children {
-                if children.count > 0 {
-                    stack = children + stack
-                }
-            }
+//            if let children = prop?.children {
+//                if children.count > 0 {
+//                    stack = children + stack
+//                }
+//            }
         }
     }
     
@@ -258,11 +258,11 @@ extension APIViewController {
             while stack.count > 0 {
                 prop = stack.removeFirst()
                 print("prop ref is " + (prop?.ref)!)
-                if let children = prop?.children {
-                    if children.count > 0 {
-                        stack = children + stack
-                    }
-                }
+//                if let children = prop?.children {
+//                    if children.count > 0 {
+//                        stack = children + stack
+//                    }
+//                }
             }
     }
     

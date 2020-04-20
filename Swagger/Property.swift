@@ -9,28 +9,14 @@
 import UIKit
 import HandyJSON
 
-class Property: Items {
-    
-    var description: String?
-    var items: Items?
+class Property: Items, Definition {
     
     // MARK: - Key
     /// 这个值是一定有的
-    var name: String!
+    var name: String?
     
-    // MARK: - Tree
-    /// 层级
-    var level = 0
-    /// 子节点
-    var children = Array<Property>()
-    /// 父节点
-    weak var parent: Property?
-    
-    /// 添加一个子节点
-    func add(child: Property) {
-      children.append(child)
-      child.parent = self
-    }
+    var description: String?
+    var items: Items?
     
     override var ref: String? {
         items?.ref ?? refLastPathComponent
@@ -41,10 +27,6 @@ class Property: Items {
 extension Property {
     
     // MARK: - Computed
-    /// 没有子节点的节点
-    var isLeaf: Bool {
-        return self.children.count <= 0
-    }
     
     var propertyType: String {
         /// type is nil

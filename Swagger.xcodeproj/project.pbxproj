@@ -31,6 +31,8 @@
 		DC6D9ED3244CAAE1009377E6 /* TryItOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */; };
 		DC6D9ED4244CAAE1009377E6 /* TryItOutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */; };
 		DC6D9ED6244CAC27009377E6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */; };
+		DC6D9F3B244DD272009377E6 /* JsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9F3A244DD272009377E6 /* JsonExtension.swift */; };
+		DC6D9F3D244DDAF0009377E6 /* Reformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9F3C244DDAF0009377E6 /* Reformer.swift */; };
 		DC72AC5524487B9F00BD0425 /* HTTPObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5424487B9F00BD0425 /* HTTPObject.swift */; };
 		DC72AC5724487DC700BD0425 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5624487DC700BD0425 /* Property.swift */; };
 		DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */; };
@@ -69,6 +71,8 @@
 		DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutController.swift; sourceTree = "<group>"; };
 		DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryItOutController.xib; sourceTree = "<group>"; };
 		DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		DC6D9F3A244DD272009377E6 /* JsonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExtension.swift; sourceTree = "<group>"; };
+		DC6D9F3C244DDAF0009377E6 /* Reformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reformer.swift; sourceTree = "<group>"; };
 		DC72AC5424487B9F00BD0425 /* HTTPObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPObject.swift; sourceTree = "<group>"; };
 		DC72AC5624487DC700BD0425 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAPICell.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				DCC545622446E4C300B0C61D /* LaunchScreen.storyboard */,
 				DCC545652446E4C300B0C61D /* Info.plist */,
 				DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */,
+				DC6D9F3A244DD272009377E6 /* JsonExtension.swift */,
+				DC6D9F3C244DDAF0009377E6 /* Reformer.swift */,
 			);
 			path = Swagger;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				DC606A8A24497A9600E45C89 /* Items.swift in Sources */,
 				DC6D9EC7244C98B9009377E6 /* TreeFirstSearchMenuController.swift in Sources */,
 				DC72AC5724487DC700BD0425 /* Property.swift in Sources */,
+				DC6D9F3B244DD272009377E6 /* JsonExtension.swift in Sources */,
 				DC606A782448405B00E45C89 /* Responses.swift in Sources */,
 				DC6D9ED3244CAAE1009377E6 /* TryItOutController.swift in Sources */,
 				DCC5455C2446E4C000B0C61D /* ViewController.swift in Sources */,
@@ -313,6 +320,7 @@
 				DC606A6C2446F5A400E45C89 /* MetaResponse.swift in Sources */,
 				DC606A7C2448411400E45C89 /* Scheme.swift in Sources */,
 				DC606A7A244840B600E45C89 /* Success.swift in Sources */,
+				DC6D9F3D244DDAF0009377E6 /* Reformer.swift in Sources */,
 				DC72AC5524487B9F00BD0425 /* HTTPObject.swift in Sources */,
 				DC606A6E2446F60D00E45C89 /* Tag.swift in Sources */,
 				DC606A7624483F8200E45C89 /* Parameter.swift in Sources */,

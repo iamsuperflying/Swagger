@@ -20,7 +20,6 @@ class Items: Scheme {
     /// string 数组
     var enums: Array<String>?
     
-    
     var generics: String {
         
         /// 数组范型 NSString

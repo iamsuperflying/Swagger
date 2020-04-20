@@ -9,7 +9,7 @@
 import UIKit
 import HandyJSON
 
-class API: HandyJSON {
+class API: Definition {
     
     var name: String?
     var post: RequestMethod?

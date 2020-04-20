@@ -49,6 +49,7 @@ class ViewController: UIViewController {
 
                     metaResponse.pathsMapping = Dictionary(grouping: metaResponse.paths) { $0.tag }
                     self.metaResponse = metaResponse
+                    Reformer.setDefinitions(definitions: metaResponse.definitions)
                     self.tags = metaResponse.tags
                 }
 

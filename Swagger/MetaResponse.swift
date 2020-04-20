@@ -23,24 +23,9 @@ class MetaResponse: HandyJSON {
     required init() {}
     
     /// 把一个数组根据 tag 来进行分组,
-    
     func mapping(mapper: HelpingMapper) {
         mapper <<<
-            self.paths <-- TransformOf<Array<API>, Dictionary<String, Any>> (
-                fromJSON: { (apis) -> Array<API>? in
-                    
-                    return apis?.map { (key, value) -> API in
-                        
-                        if let api = API.deserialize(from: value as? Dictionary) {
-                            api.name = key
-                            return api
-                        }
-                        return API()
-                    }
-
-            }, toJSON:{ (bbb) -> Dictionary<String, Any>? in
-                return nil
-            })
+            self.paths <-- Reformer<API>.Reformer()
         
     }
 }
