@@ -14,9 +14,18 @@ class RequestMethod: HandyJSON {
     var tags:Array<String>?
     var summary = ""
     var operationId: String?
-    var parameters = [Parameter]()
+    var parameters: [Parameter]?
     var responses: Responses?
     var deprecated = false
+    
+    lazy var request: String? = {
+        if let requests = self.parameters?.compactMap({$0.schema?.ref}) { return requests.first}
+        return nil
+    }()
+    
+    lazy var response = {
+        self.responses?.success?.schema?.ref
+    }()
     
     required init() {}
 }

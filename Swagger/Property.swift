@@ -14,16 +14,36 @@ class Property: Items {
     var description: String?
     var items: Items?
     
-    func propertyFormat(v: String) -> String {
-        
-        var doc = ""
-        if let desc = description {
-            doc = "///" + " " + desc + "\n"
-        }
-        if let en = enums {
-            doc = "///" + " [" + en.joined(separator: ", ") + "]\n"
-        }
-        return doc + "@property (nomatic, " + memoryManagement(v) + v + ";\n"
+    // MARK: - Key
+    /// 这个值是一定有的
+    var name: String!
+    
+    // MARK: - Tree
+    /// 层级
+    var level = 0
+    /// 子节点
+    var children = Array<Property>()
+    /// 父节点
+    weak var parent: Property?
+    
+    /// 添加一个子节点
+    func add(child: Property) {
+      children.append(child)
+      child.parent = self
+    }
+    
+    override var ref: String? {
+        items?.ref ?? refLastPathComponent
+     }
+    
+}
+
+extension Property {
+    
+    // MARK: - Computed
+    /// 没有子节点的节点
+    var isLeaf: Bool {
+        return self.children.count <= 0
     }
     
     var propertyType: String {
@@ -40,6 +60,56 @@ class Property: Items {
         }
         
         return ""
+    }
+    
+    /// memory-management-keyword
+    /// integer / string / array / number / object / boolean / nil
+    var memoryManagementKeyword: String {
+        var keyword = "strong *"
+        switch propertyType {
+        case "string":
+            keyword = "copy *"
+            break
+        case "integer":
+            keyword = "assgin "
+            break
+        case "array":
+            keyword = "strong *"
+            break
+        case "number":
+            keyword = "strong *"
+            break
+        case "boolean":
+            keyword = "assgin "
+            break
+        default:
+            break
+        }
+        return keyword
+    }
+    
+    func propertyFormat() -> String {
+        
+        var doc = ""
+        if let desc = description {
+            doc = "///" + " " + desc + "\n"
+        }
+        if let en = enums {
+            doc = "///" + " [" + en.joined(separator: ", ") + "]\n"
+        }
+        return doc + "@property (nomatic, " + memoryManagement(name) + name + ";\n"
+    }
+    
+    func propertyFormat(v: String) -> String {
+        
+        var doc = ""
+        if let desc = description {
+            doc = "///" + " " + desc + "\n"
+        }
+        if let en = enums {
+            doc = "///" + " [" + en.joined(separator: ", ") + "]\n"
+        }
+        return doc + "@property (nomatic, " + memoryManagement(v) + v + ";\n"
     }
     
     func memoryManagement(_ v: String) -> String {
@@ -88,31 +158,4 @@ class Property: Items {
         }
         return keyword + ") " + type + " " + point
     }
-    
-    /// memory-management-keyword
-    /// integer / string / array / number / object / boolean / nil
-    var memoryManagementKeyword: String {
-        var keyword = "strong *"
-        switch propertyType {
-        case "string":
-            keyword = "copy *"
-            break
-        case "integer":
-            keyword = "assgin "
-            break
-        case "array":
-            keyword = "strong *"
-            break
-        case "number":
-            keyword = "strong *"
-            break
-        case "boolean":
-            keyword = "assgin "
-            break
-        default:
-            break
-        }
-        return keyword
-    }
-    
 }

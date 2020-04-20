@@ -18,7 +18,7 @@ class MetaResponse: HandyJSON {
     var paths = [API]()
     
     var pathsMapping = Dictionary<String, Array<API>>()
-    var definitions: Dictionary<String, HTTPObject>?
+    var definitions = Dictionary<String, HTTPObject>()
     
     required init() {}
     

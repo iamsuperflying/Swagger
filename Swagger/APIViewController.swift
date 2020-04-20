@@ -11,7 +11,7 @@ import UIKit
 class APIViewController: UIViewController {
     
     var api: API?
-    var definitions: Dictionary<String, HTTPObject>?
+    var definitions = Dictionary<String, HTTPObject>()
     
     @IBOutlet var hehe: UIMenu!
     @IBOutlet weak var button: UIButton!
@@ -29,6 +29,8 @@ class APIViewController: UIViewController {
     var requests: Array<String>?
     var responses: Array<String>?
     
+    var props: Array<Property>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,9 +41,20 @@ class APIViewController: UIViewController {
 //        closure(ref: "") {
 //
 //        }
+        
+//        traverse()
+        print("prop ref is 广度优先-------------------------")
+        BFS(http: "GetIndexInfoResponse")
+        
+        print("prop ref is 深度优先-------------------------")
+        DFS(definition: "GetIndexInfoResponse")
+        
+//        if let resp = api?.httpMethod?.response {
+//            BFS(http: resp)
+//        }
     
         /// resuest
-        api?.httpMethod?.parameters.forEach({ (paramter) in
+        api?.httpMethod?.parameters?.forEach({ (paramter) in
             /// 取出 resuest
             requestText += closure(ref: paramter.schema?.ref) { }
             
@@ -63,14 +76,14 @@ class APIViewController: UIViewController {
         
         /// response
         if let $ref = api?.httpMethod?.responses?.success?.schema?.ref {
-            if let httpObject = definitions?[$ref] {
+            if let httpObject = definitions[$ref] {
                 responseText += $ref
                 responseText += "\n\n"
-                httpObject.properties?.forEach({ (k, p) in
-                    print("*****" + p.propertyFormat(v: k))
-                    responseText += p.propertyFormat(v: k)
-                    forEachProps(ref: p.ref)
-                })
+//                httpObject.properties?.forEach({ (k, p) in
+//                    print("*****" + p.propertyFormat(v: k))
+//                    responseText += p.propertyFormat(v: k)
+//                    forEachProps(ref: p.ref)
+//                })
            }
         }
         
@@ -78,22 +91,6 @@ class APIViewController: UIViewController {
         
         
         
-    }
-    
-    func closure(ref: String?, forEach: () -> Void) -> String {
-        var text = ""
-        if let $ref = ref,
-            let httpObject = definitions?[$ref] {
-                text += $ref
-                text += "\n\n"
-                httpObject.properties?.forEach({ (k, p) in
-                    print("*****" + p.propertyFormat(v: k))
-                    text += p.propertyFormat(v: k)
-                    forEachProps(ref: p.ref)
-                    forEach()
-                })
-        }
-        return text
     }
     
     /// 遍历某个属性中的属性
@@ -114,18 +111,18 @@ class APIViewController: UIViewController {
         }
         print("######" + ref!)
         self.propertiesTF.text = self.propertiesTF.text + "\n\n" + ref!
-        if let httpObject = definitions?[ref!] {
-            httpObject.properties?.forEach({ (k, p) in
-                
-                if let ref = p.items?.ref {
-                    self.propertiesTF.text = self.propertiesTF.text + "\n\n" + k
-                    forEachProps(ref: ref)
-                } else {
-                    
-//                    self.propertiesTF.text = self.propertiesTF.text + p.propertyFormat(v: k)
-//                    print("key is \(k)")
-                }
-            })
+        if let httpObject = definitions[ref!] {
+//            httpObject.properties?.forEach({ (k, p) in
+//
+//                if let ref = p.items?.ref {
+//                    self.propertiesTF.text = self.propertiesTF.text + "\n\n" + k
+//                    forEachProps(ref: ref)
+//                } else {
+//
+////                    self.propertiesTF.text = self.propertiesTF.text + p.propertyFormat(v: k)
+////                    print("key is \(k)")
+//                }
+//            })
         }
     }
     
@@ -136,20 +133,6 @@ class APIViewController: UIViewController {
 //        navigationController?.pushViewController(tryItOutController, animated: true)
     }
     @IBAction func btnCustomMenuClick(sender: UIButton) {
-//        let message = "设置解析对象的排列顺序\n\n广度优先搜索\n(优先解析第一个自定义对象的第一个自定义对象)\n\n深度优先搜索"
-//        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
-//
-//        // Create the actions.
-//        let otherAction = UIAlertAction(title: "广度优先搜索", style: .default) { _ in
-//            print("The \"Other\" alert action sheet's destructive action occurred.")
-//        }
-//        let anotherAction = UIAlertAction(title: "深度优先搜索", style: .default) { _ in
-//            print("The \"Other\" alert action sheet's other action occurred.")
-//        }
-//
-//        // Add the actions.
-//        alertController.addAction(otherAction)
-//        alertController.addAction(anotherAction)
         
         let alertController = TreeFirstSearchMenuController.init(nibName: "TreeFirstSearchMenuController", bundle: Bundle.main)
         alertController.modalPresentationStyle = .popover
@@ -178,4 +161,150 @@ class APIViewController: UIViewController {
     }
     */
 
+}
+
+extension APIViewController {
+    
+    func traverse() {
+        let resultStr = api?.httpMethod?.parameters?.reduce("", { (result, parameter) -> String in
+             return result + closure(ref: parameter.schema?.ref)
+        })
+        
+        print(resultStr)
+    }
+    
+    /// 遍历 level 0
+    func closure(ref: String?) -> String {
+        
+        var resultStr = ""
+        if let $ref = ref,
+            let resultString = definitions[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
+                resultStr + prop.propertyFormat()
+            }) {
+            resultStr = resultString
+        }
+        return resultStr
+        
+    }
+    
+    //MARK: - 非递归广度优先实现
+    func BFS() {
+        var stack = [Property]()
+        
+        if let request = api?.httpMethod?.request {
+            if let props = definitions[request]?.props?.filter({ (prop) -> Bool in
+                print("prop name is " + (prop.name)!)
+                return prop.ref != nil
+            }) {
+                stack = props
+            }
+            ///  $0.ref != nil ? $0 : nil
+            if let props = definitions[request]?.props?.compactMap({ $0.ref != nil ? $0 : nil }) {
+                stack.append(contentsOf: props)
+            }
+            
+        }
+        
+        var prop:Property?
+        
+        while stack.count > 0 {
+            prop = stack.removeFirst()
+            print("prop name is " + (prop?.name)!)
+            if let children = prop?.children {
+                if children.count > 0 {
+                    stack = children + stack
+                }
+            }
+        }
+    }
+    
+    func BFS(http: String) {
+        var stack = [Property]()
+    
+        ///  $0.ref != nil ? $0 : nil
+        let properties = definitions[http]?.properties
+        if let props = definitions[http]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
+            stack += props
+        }
+        
+        var prop:Property?
+        
+        while stack.count > 0 {
+            prop = stack.removeFirst()
+            print("prop ref is " + (prop?.ref)!)
+//            if let definition = definitions[prop!.ref!] {
+//                stack.append(definition)
+//            }
+            
+            
+//            if let children = prop?.children {
+//                if children.count > 0 {
+//                    stack += children
+//                }
+//            }
+        }
+    }
+    
+    func DFS(definition: String) {
+        var stack = [Property]()
+        
+            ///  $0.ref != nil ? $0 : nil
+            if let props = definitions[definition]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
+                stack += props
+            }
+            
+            var prop:Property?
+            
+            while stack.count > 0 {
+                prop = stack.removeFirst()
+                print("prop ref is " + (prop?.ref)!)
+                if let children = prop?.children {
+                    if children.count > 0 {
+                        stack = children + stack
+                    }
+                }
+            }
+    }
+    
+    
+//    func addChild(ref: String) {
+//        if let $ref = ref,
+//            let resultString = definitions?[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
+//                resultStr + prop.propertyFormat()
+//            }) {
+//            resultStr = resultString
+//        }
+//    }
+//
+//    func test() {
+//        var resultStr = ""
+//                if let $ref = ref,
+//                    let resultString = definitions?[$ref]?.properties?
+//                        .reduce($ref + "\n\n", { (result, value:(key:String, prop:Property)) -> String in
+//        //                    value.prop.l
+//
+//
+//                        return resultStr + value.prop.propertyFormat(v: value.key)
+//                    }) {
+//                    resultStr = resultString
+//                }
+//                return resultStr
+//    }
+    
+    func closure(ref: String?, forEach: () -> Void) -> String {
+        var text = ""
+        if let $ref = ref,
+            let httpObject = definitions[$ref] {
+                text += $ref
+                text += "\n\n"
+//                httpObject.properties?.forEach({ (k, p) in
+//                    print("*****" + p.propertyFormat(v: k))
+//                    text += p.propertyFormat(v: k)
+//                    forEachProps(ref: p.ref)
+//                    forEach()
+//                })
+        }
+        return text
+    }
+    
 }

@@ -67,8 +67,6 @@ extension TreeFirstSearchMenuController: UITableViewDelegate, UITableViewDataSou
                   if let popoverPresentationController = alertController.popoverPresentationController {
                       // Note for popovers the Cancel button is hidden automatically.
                       
-                      // This method expects a valid cell to display from.
-                    let cell = tableView.cellForRow(at: indexPath)
 //                    popoverPresentationController.sourceRect = cell?.frame as! CGRect
                       popoverPresentationController.sourceView = view
                       popoverPresentationController.permittedArrowDirections = .down

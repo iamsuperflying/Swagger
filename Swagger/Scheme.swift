@@ -15,8 +15,12 @@ class Scheme: HandyJSON {
     
     /// 引用的类
     var ref: String? {
-        reference?.components(separatedBy: "/").last
+        refLastPathComponent
     }
+    
+    lazy var refLastPathComponent: String? = {
+        reference?.components(separatedBy: "/").last
+    }()
     
     required init() {}
     

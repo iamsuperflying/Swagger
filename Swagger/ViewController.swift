@@ -98,7 +98,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         if let api = metaResponse?.pathsMapping[tag.name] {
             let apiController = APIViewController()
             apiController.api = api[indexPath.row]
-            apiController.definitions = metaResponse?.definitions
+            if let definitions = metaResponse?.definitions {
+                apiController.definitions = definitions
+            }
 //            self.navigationController?.pushViewController(apiController, animated: true)
             let nav = UINavigationController(rootViewController: apiController)
             splitViewController?.showDetailViewController(nav, sender: nav)
