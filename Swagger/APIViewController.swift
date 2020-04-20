@@ -210,11 +210,11 @@ extension APIViewController {
         while stack.count > 0 {
             prop = stack.removeFirst()
             print("prop name is " + (prop?.name)!)
-//            if let children = prop?.children {
-//                if children.count > 0 {
-//                    stack = children + stack
-//                }
-//            }
+            if let childrens = prop?.childrens {
+                if childrens.count > 0 {
+                    stack = children + stack
+                }
+            }
         }
     }
     

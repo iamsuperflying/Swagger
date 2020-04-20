@@ -13,7 +13,7 @@ class Property: Items, Definition {
     
     // MARK: - Key
     /// 这个值是一定有的
-    var name: String?
+    var name: String!
     
     var description: String?
     var items: Items?

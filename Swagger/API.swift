@@ -11,7 +11,7 @@ import HandyJSON
 
 class API: Definition {
     
-    var name: String?
+    var name: String!
     var post: RequestMethod?
     var get: RequestMethod?
     

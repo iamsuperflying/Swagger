@@ -12,7 +12,7 @@ import HandyJSON
 typealias Structure = Dictionary<String, Dictionary<String, Any>>
 
 protocol Definition: HandyJSON {
-    var name: String? { get set }
+    var name: String! { get set }
 }
 
 extension Definition {
@@ -36,6 +36,9 @@ class Reformer<T:Definition> {
         })
     }
     
+}
+
+extension UserDefaults {
     static func definitions() -> Dictionary<String, HTTPObject>? {
         return UserDefaults.standard.dictionary(forKey: "definitions") as? Dictionary<String, HTTPObject>
     }
@@ -43,5 +46,4 @@ class Reformer<T:Definition> {
     static func setDefinitions(definitions: Dictionary<String, HTTPObject>) {
         UserDefaults.standard.set(definitions, forKey: "definitions")
     }
-    
 }

@@ -28,11 +28,14 @@ class HTTPObject: HandyJSON {
     var isLeaf: Bool {
         return self.childrens?.count ?? 0 <= 0
     }
-    
-    lazy var childrens = {
-        self.properties?.compactMap({
-            Reformer.definitions()[$0.ref]
-        })
+
+    lazy var childrens:Array<HTTPObject>? = {
+        if let result = self.properties?.compactMap({
+            UserDefaults.definitions()?[$0.ref ?? ""]
+        }) {
+            return result
+        }
+        return nil
     }()
     
     required init() {}
