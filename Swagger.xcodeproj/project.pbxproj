@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3C3FF4EC6C5C6359BEA5D6B /* libPods-Swagger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482DF5E834DAB730CB77AC9C /* libPods-Swagger.a */; };
+		DC559E1C244E77ED0035BA95 /* Redis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC559E1B244E77ED0035BA95 /* Redis.swift */; };
 		DC606A6C2446F5A400E45C89 /* MetaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6B2446F5A400E45C89 /* MetaResponse.swift */; };
 		DC606A6E2446F60D00E45C89 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6D2446F60D00E45C89 /* Tag.swift */; };
 		DC606A702448027C00E45C89 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6F2448027C00E45C89 /* API.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		08D09B82476DF9E4F6F017B5 /* Pods-Swagger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swagger.debug.xcconfig"; path = "Target Support Files/Pods-Swagger/Pods-Swagger.debug.xcconfig"; sourceTree = "<group>"; };
 		482DF5E834DAB730CB77AC9C /* libPods-Swagger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swagger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC559E1B244E77ED0035BA95 /* Redis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redis.swift; sourceTree = "<group>"; };
 		DC606A6B2446F5A400E45C89 /* MetaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaResponse.swift; sourceTree = "<group>"; };
 		DC606A6D2446F60D00E45C89 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		DC606A6F2448027C00E45C89 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC559E1A244E77440035BA95 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DC559E1B244E77ED0035BA95 /* Redis.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		DC606A83244844C700E45C89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		DCC545562446E4C000B0C61D /* Swagger */ = {
 			isa = PBXGroup;
 			children = (
+				DC559E1A244E77440035BA95 /* Other */,
 				DC72AC592448A24A00BD0425 /* View */,
 				DC606A84244844DD00E45C89 /* Controllers */,
 				DC606A83244844C700E45C89 /* Models */,
@@ -332,6 +343,7 @@
 				DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */,
 				DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */,
 				DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */,
+				DC559E1C244E77ED0035BA95 /* Redis.swift in Sources */,
 				DC606A7F2448438C00E45C89 /* APIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

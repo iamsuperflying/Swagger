@@ -17,7 +17,10 @@ class MetaResponse: HandyJSON {
     let tags = [Tag]()
     var paths = [API]()
     
-    var pathsMapping = Dictionary<String, Array<API>>()
+    lazy var pathsMapping: Dictionary<String, Array<API>> = {
+        Dictionary(grouping: paths) { $0.tag }
+    }()
+    
     var definitions = Dictionary<String, HTTPObject>()
     
     required init() {}
@@ -26,6 +29,5 @@ class MetaResponse: HandyJSON {
     func mapping(mapper: HelpingMapper) {
         mapper <<<
             self.paths <-- Reformer<API>.Reformer()
-        
     }
 }

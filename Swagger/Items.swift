@@ -21,7 +21,7 @@ class Items: Scheme {
     var enums: Array<String>?
     
     var generics: String {
-        
+
         /// 数组范型 NSString
         if type == "string" {
             /// 可能存在的值的列表
@@ -44,7 +44,7 @@ class Items: Scheme {
         return ""
     }
     
-    
+    required init() {}
     override func mapping(mapper: HelpingMapper) {
         super.mapping(mapper: mapper)
         mapper <<<

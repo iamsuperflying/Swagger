@@ -44,12 +44,10 @@ class ViewController: UIViewController {
         ]).responseJSON { (response) in
             
             if let JSON = response.value {
-                
-                if let metaResponse = MetaResponse.deserialize(from: JSON as? NSDictionary) {
-
-                    metaResponse.pathsMapping = Dictionary(grouping: metaResponse.paths) { $0.tag }
+                 
+                if let metaResponse = MetaResponse.deserialize(from: JSON as? Dictionary) {
                     self.metaResponse = metaResponse
-                    UserDefaults.setDefinitions(definitions: metaResponse.definitions)
+                    Redis.standard.definitions = metaResponse.definitions
                     self.tags = metaResponse.tags
                 }
 

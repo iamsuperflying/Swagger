@@ -23,7 +23,6 @@ class Scheme: HandyJSON {
     }()
     
     required init() {}
-    
     func mapping(mapper: HelpingMapper) {
         mapper <<<
             self.reference <-- "$ref"

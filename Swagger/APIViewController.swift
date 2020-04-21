@@ -43,51 +43,51 @@ class APIViewController: UIViewController {
 //        }
         
 //        traverse()
-        print("prop ref is 广度优先-------------------------")
-        BFS(http: "GetIndexInfoResponse")
+        print("httpObject 广度优先-------------------------")
+        BFS(definition: "GetIndexInfoResponse")
         
-        print("prop ref is 深度优先-------------------------")
-        DFS(definition: "GetIndexInfoResponse")
+//        print("httpObject 深度优先-------------------------")
+//        DFS(definition: "GetIndexInfoResponse")
         
 //        if let resp = api?.httpMethod?.response {
 //            BFS(http: resp)
 //        }
     
-        /// resuest
-        api?.httpMethod?.parameters?.forEach({ (paramter) in
-            /// 取出 resuest
-            requestText += closure(ref: paramter.schema?.ref) { }
-            
-//            if let ref = paramter.schema?.ref {
-//                if let httpObject = definitions?[ref] {
-//                    requestText += ref
-//                    requestText += "\n\n"
-//                    httpObject.properties?.forEach({ (k, p) in
-//                        print("*****" + p.propertyFormat(v: k))
-//                        requestText += p.propertyFormat(v: k)
-//                        /// 以下是 Request 所需要的模型
-//                        /// forEachProps(ref: p.ref)
-//                    })
-//               }
-//            }
-        })
-        
-        propertiesTF.text = requestText
-        
-        /// response
-        if let $ref = api?.httpMethod?.responses?.success?.schema?.ref {
-            if let httpObject = definitions[$ref] {
-                responseText += $ref
-                responseText += "\n\n"
-//                httpObject.properties?.forEach({ (k, p) in
-//                    print("*****" + p.propertyFormat(v: k))
-//                    responseText += p.propertyFormat(v: k)
-//                    forEachProps(ref: p.ref)
-//                })
-           }
-        }
-        
-        responseTF.text = responseText
+//        /// resuest
+//        api?.httpMethod?.parameters?.forEach({ (paramter) in
+//            /// 取出 resuest
+//            requestText += closure(ref: paramter.schema?.ref) { }
+//
+////            if let ref = paramter.schema?.ref {
+////                if let httpObject = definitions?[ref] {
+////                    requestText += ref
+////                    requestText += "\n\n"
+////                    httpObject.properties?.forEach({ (k, p) in
+////                        print("*****" + p.propertyFormat(v: k))
+////                        requestText += p.propertyFormat(v: k)
+////                        /// 以下是 Request 所需要的模型
+////                        /// forEachProps(ref: p.ref)
+////                    })
+////               }
+////            }
+//        })
+//
+//        propertiesTF.text = requestText
+//
+//        /// response
+//        if let $ref = api?.httpMethod?.responses?.success?.schema?.ref {
+//            if let httpObject = definitions[$ref] {
+//                responseText += $ref
+//                responseText += "\n\n"
+////                httpObject.properties?.forEach({ (k, p) in
+////                    print("*****" + p.propertyFormat(v: k))
+////                    responseText += p.propertyFormat(v: k)
+////                    forEachProps(ref: p.ref)
+////                })
+//           }
+//        }
+//
+//        responseTF.text = responseText
         
         
         
@@ -165,146 +165,65 @@ class APIViewController: UIViewController {
 
 extension APIViewController {
     
-//    func traverse() {
-//        let resultStr = api?.httpMethod?.parameters?.reduce("", { (result, parameter) -> String in
-//             return result + closure(ref: parameter.schema?.ref)
-//        })
-//
-//        print(resultStr)
-//    }
-    
-    /// 遍历 level 0
-//    func closure(ref: String?) -> String {
-//
-//        var resultStr = ""
-//        if let $ref = ref,
-//            let resultString = definitions[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
-//                resultStr + prop.propertyFormat()
-//            }) {
-//            resultStr = resultString
-//        }
-//        return resultStr
-//
-//    }
-    
-    //MARK: - 非递归广度优先实现
-    func BFS() {
-        var stack = [Property]()
+    func BFS(definition: String) {
         
-        if let request = api?.httpMethod?.request {
-            if let props = definitions[request]?.properties?.filter({ (prop) -> Bool in
-                print("prop name is " + (prop.name)!)
-                return prop.ref != nil
-            }) {
-                stack = props
-            }
-            ///  $0.ref != nil ? $0 : nil
-            if let props = definitions[request]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
-                stack.append(contentsOf: props)
-            }
-            
+        /// 根
+        guard let httpObject = definitions[definition] else { return }
+        
+        var stack = [HTTPObject]()
+        
+        var titles:Set<String> = [httpObject.title]
+        
+        if let childrens = httpObject.childrens {
+            stack = childrens.unique(titles: &titles)
         }
         
-        var prop:Property?
-        
         while stack.count > 0 {
-            prop = stack.removeFirst()
-            print("prop name is " + (prop?.name)!)
-            if let childrens = prop?.childrens {
+            let obj = stack.removeFirst()
+            print("httpObject title is " + obj.title + " level is \(obj.level)" )
+            print("httpObject \(String(describing: obj.propertiesFormat))")
+            
+            self.requestText += obj.title
+            self.requestText += "\n\n"
+            self.requestText += obj.propertiesFormat ?? ""
+            self.requestText += "\n\n"
+            self.propertiesTF.text = requestText
+            if let childrens = obj.childrens {
                 if childrens.count > 0 {
-                    stack = children + stack
+                    stack += childrens
                 }
             }
-        }
-    }
-    
-    func BFS(http: String) {
-        var stack = [Property]()
-    
-        ///  $0.ref != nil ? $0 : nil
-        let properties = definitions[http]?.properties
-        if let props = definitions[http]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
-            stack += props
+            stack = stack.unique(titles: &titles)
+            print(stack)
+            
         }
         
-        var prop:Property?
-        
-        while stack.count > 0 {
-            prop = stack.removeFirst()
-            print("prop ref is " + (prop?.ref)!)
-//            if let definition = definitions[prop!.ref!] {
-//                stack.append(definition)
-//            }
-            
-            
-//            if let children = prop?.children {
-//                if children.count > 0 {
-//                    stack += children
-//                }
-//            }
-        }
     }
     
     func DFS(definition: String) {
-        var stack = [Property]()
         
-            ///  $0.ref != nil ? $0 : nil
-            if let props = definitions[definition]?.properties?.compactMap({ $0.ref != nil ? $0 : nil }) {
-                stack += props
-            }
-            
-            var prop:Property?
-            
-            while stack.count > 0 {
-                prop = stack.removeFirst()
-                print("prop ref is " + (prop?.ref)!)
-//                if let children = prop?.children {
-//                    if children.count > 0 {
-//                        stack = children + stack
-//                    }
-//                }
-            }
-    }
-    
-    
-//    func addChild(ref: String) {
-//        if let $ref = ref,
-//            let resultString = definitions?[$ref]?.props?.reduce(resultStr, { (result, prop) -> String in
-//                resultStr + prop.propertyFormat()
-//            }) {
-//            resultStr = resultString
-//        }
-//    }
-//
-//    func test() {
-//        var resultStr = ""
-//                if let $ref = ref,
-//                    let resultString = definitions?[$ref]?.properties?
-//                        .reduce($ref + "\n\n", { (result, value:(key:String, prop:Property)) -> String in
-//        //                    value.prop.l
-//
-//
-//                        return resultStr + value.prop.propertyFormat(v: value.key)
-//                    }) {
-//                    resultStr = resultString
-//                }
-//                return resultStr
-//    }
-    
-    func closure(ref: String?, forEach: () -> Void) -> String {
-        var text = ""
-        if let $ref = ref,
-            let httpObject = definitions[$ref] {
-                text += $ref
-                text += "\n\n"
-//                httpObject.properties?.forEach({ (k, p) in
-//                    print("*****" + p.propertyFormat(v: k))
-//                    text += p.propertyFormat(v: k)
-//                    forEachProps(ref: p.ref)
-//                    forEach()
-//                })
+        var stack = [HTTPObject]()
+        
+        /// 根
+        let httpObject = definitions[definition]
+        
+        if let childrens = httpObject?.childrens {
+            stack = childrens
         }
-        return text
+        
+        var obj: HTTPObject?
+        while stack.count > 0 {
+            obj = stack.removeFirst()
+            print("httpObject title is " + obj!.title + " level is \(obj!.level)" )
+            if let childrens = obj?.childrens {
+                if childrens.count > 0 {
+                    stack = childrens + stack
+                }
+            }
+//            stack = stack.unique
+        }
+        
     }
     
 }
+ 

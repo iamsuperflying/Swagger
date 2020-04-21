@@ -71,7 +71,6 @@ extension Property {
     }
     
     func propertyFormat() -> String {
-        
         var doc = ""
         if let desc = description {
             doc = "///" + " " + desc + "\n"

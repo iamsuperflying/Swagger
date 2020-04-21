@@ -91,7 +91,7 @@
                         <constraint firstItem="jUc-NO-4Kc" firstAttribute="leading" secondItem="je4-YG-1HB" secondAttribute="leading" constant="20" id="zoC-d4-CQo"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-9w-MQw">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-9w-MQw">
                     <rect key="frame" x="0.0" y="144" width="800" height="300"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
