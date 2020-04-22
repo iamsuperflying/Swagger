@@ -47,6 +47,5 @@ extension CodeThemeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelectedCodeTheme(theme: availableThemes![indexPath.row])
-        self.dismiss(animated: true, completion: nil)
     }
 }
