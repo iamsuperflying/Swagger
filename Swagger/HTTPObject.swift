@@ -54,7 +54,7 @@ extension HTTPObject {
 
     /// 没有子节点的节点
     var isLeaf: Bool {
-        return self.childrens?.count ?? 0 <= 0
+        return self.childrens?.isEmpty ?? true
     }
 }
 

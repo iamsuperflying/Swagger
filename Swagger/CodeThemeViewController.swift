@@ -9,10 +9,6 @@
 import UIKit
 import Highlightr
 
-protocol CodeThemeProtocol {
-    func didSelectedCodeTheme(theme: String)
-}
-
 class CodeThemeViewController: UIViewController {
     
     var delegate:CodeThemeProtocol?

@@ -62,7 +62,7 @@ extension TreeFirstSearchMenuController: UITableViewDelegate, UITableViewDataSou
     
         func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
             
-            let alertController = TreeFSImageController.init(nibName: "TreeFSImageController", bundle: Bundle.main)
+            let alertController = TreeFSImageController.fromNIb()
                   alertController.modalPresentationStyle = .popover
                   alertController.preferredContentSize = CGSize(width: 500, height: 300)
                   // Configure the alert controller's popover presentation controller if it has one.

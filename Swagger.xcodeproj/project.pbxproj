@@ -48,6 +48,10 @@
 		DC72AC5724487DC700BD0425 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5624487DC700BD0425 /* Property.swift */; };
 		DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */; };
 		DC72AC5D2448A27400BD0425 /* MasterAPICell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC72AC5C2448A27400BD0425 /* MasterAPICell.xib */; };
+		DC824C1624506EA50010DDC4 /* RequestHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC824C1424506EA50010DDC4 /* RequestHeaderController.swift */; };
+		DC824C1724506EA50010DDC4 /* RequestHeaderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC824C1524506EA50010DDC4 /* RequestHeaderController.xib */; };
+		DC824C1924507E390010DDC4 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC824C1824507E390010DDC4 /* Protocols.swift */; };
+		DCA44DC7245098C2007380FD /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA44DC6245098C2007380FD /* CodeView.swift */; };
 		DCC545582446E4C000B0C61D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC545572446E4C000B0C61D /* AppDelegate.swift */; };
 		DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC545592446E4C000B0C61D /* SceneDelegate.swift */; };
 		DCC5455C2446E4C000B0C61D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5455B2446E4C000B0C61D /* ViewController.swift */; };
@@ -78,7 +82,7 @@
 		DC606A772448405B00E45C89 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		DC606A79244840B600E45C89 /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
 		DC606A7B2448411400E45C89 /* Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
-		DC606A7D2448438B00E45C89 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		DC606A7D2448438B00E45C89 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		DC606A7E2448438C00E45C89 /* APIViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APIViewController.xib; sourceTree = "<group>"; };
 		DC606A852449374900E45C89 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
 		DC606A872449375500E45C89 /* ParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterView.xib; sourceTree = "<group>"; };
@@ -99,6 +103,10 @@
 		DC72AC5624487DC700BD0425 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterAPICell.swift; sourceTree = "<group>"; };
 		DC72AC5C2448A27400BD0425 /* MasterAPICell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterAPICell.xib; sourceTree = "<group>"; };
+		DC824C1424506EA50010DDC4 /* RequestHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeaderController.swift; sourceTree = "<group>"; };
+		DC824C1524506EA50010DDC4 /* RequestHeaderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestHeaderController.xib; sourceTree = "<group>"; };
+		DC824C1824507E390010DDC4 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		DCA44DC6245098C2007380FD /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		DCC545542446E4C000B0C61D /* Swagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC545572446E4C000B0C61D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC545592446E4C000B0C61D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,13 +182,14 @@
 			path = ttf;
 			sourceTree = "<group>";
 		};
-		DC1E0C28245015D700F26C19 /* Extension */ = {
+		DC1E0C28245015D700F26C19 /* Protocol&Extension */ = {
 			isa = PBXGroup;
 			children = (
 				DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */,
 				DC6D9F3A244DD272009377E6 /* Common.swift */,
+				DC824C1824507E390010DDC4 /* Protocols.swift */,
 			);
-			name = Extension;
+			name = "Protocol&Extension";
 			sourceTree = "<group>";
 		};
 		DC559E1A244E77440035BA95 /* Other */ = {
@@ -222,6 +231,8 @@
 				DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */,
 				DC1E0C0F244FD4BC00F26C19 /* CodeThemeViewController.swift */,
 				DC1E0C10244FD4BC00F26C19 /* CodeThemeViewController.xib */,
+				DC824C1424506EA50010DDC4 /* RequestHeaderController.swift */,
+				DC824C1524506EA50010DDC4 /* RequestHeaderController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				DC606A872449375500E45C89 /* ParameterView.xib */,
 				DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */,
 				DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */,
+				DCA44DC6245098C2007380FD /* CodeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,7 +273,7 @@
 		DCC545562446E4C000B0C61D /* Swagger */ = {
 			isa = PBXGroup;
 			children = (
-				DC1E0C28245015D700F26C19 /* Extension */,
+				DC1E0C28245015D700F26C19 /* Protocol&Extension */,
 				DC1E0C13244FE1FE00F26C19 /* Support */,
 				DC559E1A244E77440035BA95 /* Other */,
 				DC72AC592448A24A00BD0425 /* View */,
@@ -341,6 +353,7 @@
 				DC606A882449375500E45C89 /* ParameterView.xib in Resources */,
 				DC6D9ED4244CAAE1009377E6 /* TryItOutController.xib in Resources */,
 				DCC545642446E4C300B0C61D /* LaunchScreen.storyboard in Resources */,
+				DC824C1724506EA50010DDC4 /* RequestHeaderController.xib in Resources */,
 				DCC545612446E4C300B0C61D /* Assets.xcassets in Resources */,
 				DC1E0C25244FE21C00F26C19 /* JetBrainsMono-Bold-Italic.ttf in Resources */,
 				DC1E0C22244FE21C00F26C19 /* JetBrainsMono-ExtraBold.ttf in Resources */,
@@ -431,10 +444,13 @@
 				DC606A74244826F000E45C89 /* RequestMethod.swift in Sources */,
 				DC606A702448027C00E45C89 /* API.swift in Sources */,
 				DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */,
+				DC824C1624506EA50010DDC4 /* RequestHeaderController.swift in Sources */,
+				DC824C1924507E390010DDC4 /* Protocols.swift in Sources */,
 				DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */,
 				DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */,
 				DC559E1C244E77ED0035BA95 /* Redis.swift in Sources */,
 				DC606A7F2448438C00E45C89 /* APIViewController.swift in Sources */,
+				DCA44DC7245098C2007380FD /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

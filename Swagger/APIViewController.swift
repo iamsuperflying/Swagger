@@ -26,11 +26,13 @@ class APIViewController: UIViewController {
     var requestText = "" {
         didSet {
             propertiesTF.attributedText = changeTheme(theme: "xcode", code: requestText)
+            propertiesTF.backgroundColor = themeBackGround()
         }
     }
     var responseText = "" {
         didSet {
             responseTF.attributedText = changeTheme(theme: "xcode", code: responseText)
+            responseTF.backgroundColor = themeBackGround()
         }
     }
     
@@ -39,7 +41,7 @@ class APIViewController: UIViewController {
     
     var props: Array<Property>?
     
-    let highlightr = Highlightr()
+    var highlightr = Highlightr()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,14 +72,12 @@ class APIViewController: UIViewController {
         let alertController = CodeThemeViewController.fromNIb()
         alertController.delegate = self
         alertController.modalPresentationStyle = .popover
-        alertController.preferredContentSize = CGSize(width: 300, height: 200)
+        alertController.preferredContentSize = CGSize(width: 250, height: 400)
         // Configure the alert controller's popover presentation controller if it has one.
         if let popoverPresentationController = alertController.popoverPresentationController {
             // Note for popovers the Cancel button is hidden automatically.
-            
             // This method expects a valid cell to display from.
             let x = view.frame.width - 20 - sender.frame.width * 0.5
-            
             popoverPresentationController.sourceRect = CGRect(x: x , y: sender.frame.maxY, width: sender.frame.width, height: sender.frame.height)
             popoverPresentationController.sourceView = view
             popoverPresentationController.permittedArrowDirections = .up
@@ -111,7 +111,24 @@ class APIViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
     }
-
+    @IBAction func showRequestHeader(_ sender: UIButton) {
+        let alertController = RequestHeaderController.fromNIb()
+        alertController.modalPresentationStyle = .popover
+        alertController.preferredContentSize = CGSize(width: 500, height: 500)
+        if let header = api?.httpMethod?.header {
+            alertController.header = header
+        }
+        // Configure the alert controller's popover presentation controller if it has one.
+        if let popoverPresentationController = alertController.popoverPresentationController {
+            let origin = CGPoint(x: sender.frame.minX, y: sender.superview!.frame.midY)
+            popoverPresentationController.sourceRect = CGRect(origin: origin, size: sender.frame.size)
+            popoverPresentationController.sourceView = view
+            popoverPresentationController.permittedArrowDirections = .up
+        }
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 extension APIViewController {
@@ -169,30 +186,12 @@ extension APIViewController {
     }
 }
 
-extension APIViewController: CodeThemeProtocol {
+extension APIViewController: CodeThemeProxy {
     
     func didSelectedCodeTheme(theme: String) {
-        self.responseTF.attributedText = changeTheme(theme: theme)
+        self.propertiesTF.attributedText = changeTheme(theme: theme, code: requestText)
+        self.responseTF.attributedText = changeTheme(theme: theme, code: responseText)
     }
-    
-    func changeTheme(theme: String) -> NSAttributedString? {
-        highlightr?.setTheme(to: theme)
-        highlightr?.theme.setCodeFont(RPFont(name: "JetBrainsMono-Regular", size: 30) ?? RPFont.systemFont(ofSize: 30))
-        responseTF.backgroundColor = highlightr?.theme.themeBackgroundColor
-        propertiesTF.backgroundColor = highlightr?.theme.themeBackgroundColor
-        let code = requestText
-        // You can omit the second parameter to use automatic language detection.
-        return highlightr?.highlight(code, as: "swift")
-    }
-    
-    func changeTheme(theme: String, code: String) -> NSAttributedString? {
-        highlightr?.setTheme(to: theme)
-        highlightr?.theme.setCodeFont(RPFont(name: "JetBrainsMono-Regular", size: 30) ?? RPFont.systemFont(ofSize: 30))
-        responseTF.backgroundColor = highlightr?.theme.themeBackgroundColor
-        propertiesTF.backgroundColor = highlightr?.theme.themeBackgroundColor
-        // You can omit the second parameter to use automatic language detection.
-        return highlightr?.highlight(code, as: "swift")
-    }
-    
+
 }
  
