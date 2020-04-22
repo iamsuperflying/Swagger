@@ -78,19 +78,7 @@ extension Property {
         if let en = enums {
             doc = "///" + " [" + en.joined(separator: ", ") + "]\n"
         }
-        return doc + "@property (nomatic, " + memoryManagement(name) + name + ";\n"
-    }
-    
-    func propertyFormat(v: String) -> String {
-        
-        var doc = ""
-        if let desc = description {
-            doc = "///" + " " + desc + "\n"
-        }
-        if let en = enums {
-            doc = "///" + " [" + en.joined(separator: ", ") + "]\n"
-        }
-        return doc + "@property (nomatic, " + memoryManagement(v) + v + ";\n"
+        return doc + "@property (nonatomic, " + memoryManagement(name) + name + ";\n"
     }
     
     func memoryManagement(_ v: String) -> String {

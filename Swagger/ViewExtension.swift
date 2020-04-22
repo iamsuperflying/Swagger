@@ -9,7 +9,13 @@
 import UIKit
 
 extension UIView {
-    class func fromNib<T: UIView>() -> T {
-        return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+    class func fromNib() -> Self {
+        return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as! Self
+    }
+}
+
+extension UIViewController {
+    class func fromNIb() -> Self {
+        return Self.init(nibName: String(describing: self), bundle: Bundle.main)
     }
 }

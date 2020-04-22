@@ -8,8 +8,13 @@
 
 import Foundation
 
-extension NSObject {
-    
+enum Algorithm {
+    /// 广度优先搜索
+    case breadth
+    /// 深度优先搜索
+    case depth
+}
 
+extension NSObject {
     
 }

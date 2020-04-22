@@ -100,7 +100,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
             if let definitions = metaResponse?.definitions {
                 apiController.definitions = definitions
             }
-//            self.navigationController?.pushViewController(apiController, animated: true)
             let nav = UINavigationController(rootViewController: apiController)
             splitViewController?.showDetailViewController(nav, sender: nav)
         }

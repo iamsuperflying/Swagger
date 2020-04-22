@@ -37,37 +37,3 @@ class Reformer<T:Definition> {
     }
     
 }
-
-protocol Equal {
-    static func == (lhs: Self, rhs: Self) -> Bool
-}
-
-extension Array where Element:HTTPObject {
-    
-    func unique( titles: inout Set<String>) -> [HTTPObject] {
-        return self.filter {
-            /// 之前有没有
-            let contains = titles.contains($0.title)
-            titles.insert($0.title)
-            return !contains
-        }
-    }
-    
-    var unique:[Element] {
-        var titles = Set<String>()
-        return self.filter {
-            /// 之前有没有
-            let contains = titles.contains($0.title)
-            titles.insert($0.title)
-            return !contains
-            
-            /// 有
-            /// add 过滤掉了
-            /// false
-            
-            /// 没有
-            /// add
-            /// true
-        }
-    }
-}

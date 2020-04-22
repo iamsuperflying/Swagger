@@ -11,6 +11,10 @@ import UIKit
 class TreeFirstSearchMenuController: UIViewController {
 
     @IBOutlet weak var menusView: UITableView!
+    
+    let searchAlgorithms = ["广度优先", "深度优先"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,22 +43,20 @@ extension TreeFirstSearchMenuController: UITableViewDelegate, UITableViewDataSou
         }
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 2
+            return searchAlgorithms.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
-            cell.textLabel?.text = "ssssss"
+            cell.textLabel?.text = searchAlgorithms[indexPath.row]
             cell.accessoryType = .detailButton
           
             return cell;
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let nav = UINavigationController(rootViewController: APIViewController())
-    //        self .present(nav, animated: true, completion: nil)
             
         }
     

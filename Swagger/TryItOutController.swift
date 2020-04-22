@@ -14,7 +14,7 @@ class TryItOutController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let v: RequestParameterView = RequestParameterView.fromNib()
+        let v = RequestParameterView.fromNib()
         v.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 400, height: 50))
         view.addSubview(v)
     }

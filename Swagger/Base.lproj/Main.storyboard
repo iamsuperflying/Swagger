@@ -98,10 +98,27 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kkI-32-HOu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q17-6Y-fVX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AX-BG-fvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="1134"/>
+            <point key="canvasLocation" x="1077" y="1091"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gUT-1H-qf7">
+            <objects>
+                <navigationController id="ftk-v3-T17" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vo8-aJ-XS4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LMI-Pd-z70" kind="relationship" relationship="rootViewController" id="xBQ-8d-7PJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pay-pX-0Hr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="1091"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pci-Et-XCx">
@@ -125,7 +142,7 @@
                 <splitViewController id="cbe-6s-kHu" sceneMemberID="viewController">
                     <connections>
                         <segue destination="HFK-8a-llP" kind="relationship" relationship="masterViewController" id="exu-Tl-bzu"/>
-                        <segue destination="LMI-Pd-z70" kind="relationship" relationship="detailViewController" id="IfF-Ff-cqm"/>
+                        <segue destination="ftk-v3-T17" kind="relationship" relationship="detailViewController" id="FfE-Kj-1A3"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-cP-4cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
