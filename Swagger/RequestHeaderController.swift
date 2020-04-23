@@ -7,27 +7,17 @@
 //
 
 import UIKit
-import Highlightr
 
-class RequestHeaderController: UIViewController, CodeThemeProxy {
+class RequestHeaderController: UIViewController {
     
-    var highlightr = Highlightr()
-    
-    func didSelectedCodeTheme(theme: String) {
-        
-    }
-    
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: CodeView!
     var header = [Parameter]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let text = header.reduce("", { (r, p) -> String in
-            r + (p.toJSONString()?.jsonFormatPrint() ?? "")
+        textView.code = header.reduce("", {
+            $0 + ($1.toJSONString()?.jsonFormatPrint() ?? "")
         })
-        textView.attributedText = changeTheme(theme: "xcode", code: text, as: "json")
-        textView.backgroundColor = themeBackGround()
-        view.backgroundColor = themeBackGround()
     }
 
 }

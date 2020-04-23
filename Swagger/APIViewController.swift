@@ -18,21 +18,19 @@ class APIViewController: UIViewController {
     
     @IBOutlet weak var apiNameLabel: UILabel!
     
-    @IBOutlet weak var propertiesTF: UITextView!
+    @IBOutlet weak var propertiesTF: CodeView!
     
-    @IBOutlet weak var responseTF: UITextView!
+    @IBOutlet weak var responseTF: CodeView!
     
     @IBOutlet var themeButton: UIButton!
     var requestText = "" {
         didSet {
-            propertiesTF.attributedText = changeTheme(theme: "xcode", code: requestText)
-            propertiesTF.backgroundColor = themeBackGround()
+            propertiesTF.code = requestText
         }
     }
     var responseText = "" {
         didSet {
-            responseTF.attributedText = changeTheme(theme: "xcode", code: responseText)
-            responseTF.backgroundColor = themeBackGround()
+            responseTF.code = responseText
         }
     }
     
@@ -57,7 +55,8 @@ class APIViewController: UIViewController {
         if let header = api?.httpMethod?.header {
             
         }
-        let body = api?.httpMethod?.body
+        propertiesTF.isHidden = true
+//        responseTF.isHidden = api?.httpMethod?.response == nil
         
         if let req = api?.httpMethod?.request {
             requestText += firstSearchAlgorithm(definition: req, algorithm: .breadth)
@@ -70,7 +69,7 @@ class APIViewController: UIViewController {
     
     @IBAction func showCodeThemePicker(_ sender: UIButton) {
         let alertController = CodeThemeViewController.fromNIb()
-        alertController.delegate = self
+//        alertController.delegate = self
         alertController.modalPresentationStyle = .popover
         alertController.preferredContentSize = CGSize(width: 250, height: 400)
         // Configure the alert controller's popover presentation controller if it has one.
@@ -87,10 +86,16 @@ class APIViewController: UIViewController {
     }
     
     @IBAction func tryItOut(_ sender: Any) {
-        let tryItOutController = TryItOutController.fromNIb()
-            // TryItOutController.init(nibName: "TryItOutController", bundle: Bundle.main)
         
-        present(tryItOutController, animated: true, completion: nil)
+        let tryItOutController = TryItOutController.fromNIb()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = tryItOutController
+        window.makeKeyAndVisible()
+        
+//        let tryItOutController = TryItOutController.fromNIb()
+//            // TryItOutController.init(nibName: "TryItOutController", bundle: Bundle.main)
+//
+//        present(tryItOutController, animated: true, completion: nil)
 //        navigationController?.pushViewController(tryItOutController, animated: true)
     }
     @IBAction func btnCustomMenuClick(sender: UIButton) {
@@ -114,7 +119,7 @@ class APIViewController: UIViewController {
     @IBAction func showRequestHeader(_ sender: UIButton) {
         let alertController = RequestHeaderController.fromNIb()
         alertController.modalPresentationStyle = .popover
-        alertController.preferredContentSize = CGSize(width: 500, height: 500)
+        alertController.preferredContentSize = CGSize(width: 400, height: 280)
         if let header = api?.httpMethod?.header {
             alertController.header = header
         }
@@ -162,12 +167,6 @@ extension APIViewController {
             
             result += obj.propertiesFormat
             
-//            result += "@interface " + obj.title + "()"
-//            result += "\n\n"
-//            result += obj.propertiesFormat ?? ""
-//            result += "\n"
-//            result += "@end\n\n"
-            
             if let childrens = obj.childrens {
                 if !childrens.isEmpty {
                     switch algorithm {
@@ -186,12 +185,12 @@ extension APIViewController {
     }
 }
 
-extension APIViewController: CodeThemeProxy {
-    
-    func didSelectedCodeTheme(theme: String) {
-        self.propertiesTF.attributedText = changeTheme(theme: theme, code: requestText)
-        self.responseTF.attributedText = changeTheme(theme: theme, code: responseText)
-    }
-
-}
+//extension APIViewController: CodeThemeProxy {
+//
+//    func didSelectedCodeTheme(theme: String) {
+//        self.propertiesTF.attributedText = changeTheme(theme: theme, code: requestText)
+//        self.responseTF.attributedText = changeTheme(theme: theme, code: responseText)
+//    }
+//
+//}
  

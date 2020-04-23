@@ -35,7 +35,7 @@ class HTTPObject: HandyJSON {
     }()
     
     lazy var propertiesFormat: String = {
-        var resultStr = "@interface " + title + "()\n\n"
+        var resultStr = "\n@interface " + title + "()\n\n"
         
         if let resultString = self.properties?.reduce("", {(result, prop) -> String in
             result + prop.propertyFormat()

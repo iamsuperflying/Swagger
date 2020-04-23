@@ -107,7 +107,7 @@
 		DC824C1524506EA50010DDC4 /* RequestHeaderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestHeaderController.xib; sourceTree = "<group>"; };
 		DC824C1824507E390010DDC4 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DCA44DC6245098C2007380FD /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
-		DCC545542446E4C000B0C61D /* Swagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC545542446E4C000B0C61D /* AttributeConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AttributeConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC545572446E4C000B0C61D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC545592446E4C000B0C61D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DCC5455B2446E4C000B0C61D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 		DCC545552446E4C000B0C61D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCC545542446E4C000B0C61D /* Swagger.app */,
+				DCC545542446E4C000B0C61D /* AttributeConverter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 			);
 			name = Swagger;
 			productName = Swagger;
-			productReference = DCC545542446E4C000B0C61D /* Swagger.app */;
+			productReference = DCC545542446E4C000B0C61D /* AttributeConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -608,7 +608,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flying.swagger;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AttributeConverter;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -633,7 +633,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flying.swagger;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AttributeConverter;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

@@ -9,15 +9,23 @@
 import UIKit
 import Highlightr
 
-class CodeView: UITextView {
-
-    var cheme:String = "" {
+class CodeView: UITextView, CodeThemeDelegate {
+    
+    @IBInspectable var languageName: String = "swift"
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        Redis.standard.addDelegate(delegate: self)
+    }
+    
+    var code: String = "" {
         didSet {
-            
+            Redis.standard.changeTheme()
         }
     }
     
-    func test() {
+    func textView() -> UITextView {
+        return self
     }
 
 }

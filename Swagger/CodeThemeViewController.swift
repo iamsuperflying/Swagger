@@ -7,14 +7,11 @@
 //
 
 import UIKit
-import Highlightr
 
 class CodeThemeViewController: UIViewController {
     
-    var delegate:CodeThemeProtocol?
-    
     @IBOutlet weak var themeListView: UITableView!
-    let availableThemes = Highlightr()?.availableThemes()
+    let availableThemes:[String] = Redis.standard.availableThemes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +32,17 @@ extension CodeThemeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableThemes?.count ?? 0
+        return availableThemes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = availableThemes?[indexPath.row]
+        cell.textLabel?.text = availableThemes[indexPath.row]
         return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectedCodeTheme(theme: availableThemes![indexPath.row])
+        Redis.standard.changeTheme(theme: availableThemes[indexPath.row])
     }
 }
