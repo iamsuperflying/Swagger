@@ -19,6 +19,8 @@
 		DC1E0C24244FE21C00F26C19 /* JetBrainsMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1E0C1C244FE21C00F26C19 /* JetBrainsMono-Medium.ttf */; };
 		DC1E0C25244FE21C00F26C19 /* JetBrainsMono-Bold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1E0C1D244FE21C00F26C19 /* JetBrainsMono-Bold-Italic.ttf */; };
 		DC559E1C244E77ED0035BA95 /* Redis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC559E1B244E77ED0035BA95 /* Redis.swift */; };
+		DC55CA812451B99400537E32 /* TryItOutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55CA802451B99300537E32 /* TryItOutSceneDelegate.swift */; };
+		DC55CA832451BA2800537E32 /* TryItOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC55CA822451BA2800537E32 /* TryItOut.storyboard */; };
 		DC606A6C2446F5A400E45C89 /* MetaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6B2446F5A400E45C89 /* MetaResponse.swift */; };
 		DC606A6E2446F60D00E45C89 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6D2446F60D00E45C89 /* Tag.swift */; };
 		DC606A702448027C00E45C89 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A6F2448027C00E45C89 /* API.swift */; };
@@ -40,7 +42,6 @@
 		DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */; };
 		DC6D9ED0244CA9DB009377E6 /* RequestParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */; };
 		DC6D9ED3244CAAE1009377E6 /* TryItOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */; };
-		DC6D9ED4244CAAE1009377E6 /* TryItOutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */; };
 		DC6D9ED6244CAC27009377E6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */; };
 		DC6D9F3B244DD272009377E6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9F3A244DD272009377E6 /* Common.swift */; };
 		DC6D9F3D244DDAF0009377E6 /* Reformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9F3C244DDAF0009377E6 /* Reformer.swift */; };
@@ -74,6 +75,8 @@
 		DC1E0C1C244FE21C00F26C19 /* JetBrainsMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Medium.ttf"; sourceTree = "<group>"; };
 		DC1E0C1D244FE21C00F26C19 /* JetBrainsMono-Bold-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Bold-Italic.ttf"; sourceTree = "<group>"; };
 		DC559E1B244E77ED0035BA95 /* Redis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redis.swift; sourceTree = "<group>"; };
+		DC55CA802451B99300537E32 /* TryItOutSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryItOutSceneDelegate.swift; sourceTree = "<group>"; };
+		DC55CA822451BA2800537E32 /* TryItOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TryItOut.storyboard; sourceTree = "<group>"; };
 		DC606A6B2446F5A400E45C89 /* MetaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaResponse.swift; sourceTree = "<group>"; };
 		DC606A6D2446F60D00E45C89 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		DC606A6F2448027C00E45C89 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -95,7 +98,6 @@
 		DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterView.swift; sourceTree = "<group>"; };
 		DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestParameterView.xib; sourceTree = "<group>"; };
 		DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutController.swift; sourceTree = "<group>"; };
-		DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryItOutController.xib; sourceTree = "<group>"; };
 		DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		DC6D9F3A244DD272009377E6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DC6D9F3C244DDAF0009377E6 /* Reformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reformer.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				DCC5456B2446E4D600B0C61D /* Swagger.entitlements */,
 				DCC545572446E4C000B0C61D /* AppDelegate.swift */,
 				DCC545592446E4C000B0C61D /* SceneDelegate.swift */,
+				DC55CA802451B99300537E32 /* TryItOutSceneDelegate.swift */,
 				DC1E0C14244FE20800F26C19 /* Resource */,
 			);
 			name = Support;
@@ -228,7 +231,6 @@
 				DC6D9EC9244C9FD8009377E6 /* TreeFSImageController.swift */,
 				DC6D9ECA244C9FD8009377E6 /* TreeFSImageController.xib */,
 				DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */,
-				DC6D9ED2244CAAE1009377E6 /* TryItOutController.xib */,
 				DC1E0C0F244FD4BC00F26C19 /* CodeThemeViewController.swift */,
 				DC1E0C10244FD4BC00F26C19 /* CodeThemeViewController.xib */,
 				DC824C1424506EA50010DDC4 /* RequestHeaderController.swift */,
@@ -281,6 +283,7 @@
 				DC606A83244844C700E45C89 /* Models */,
 				DCC5455B2446E4C000B0C61D /* ViewController.swift */,
 				DCC5455D2446E4C000B0C61D /* Main.storyboard */,
+				DC55CA822451BA2800537E32 /* TryItOut.storyboard */,
 				DCC545602446E4C300B0C61D /* Assets.xcassets */,
 				DCC545622446E4C300B0C61D /* LaunchScreen.storyboard */,
 				DCC545652446E4C300B0C61D /* Info.plist */,
@@ -351,7 +354,6 @@
 			files = (
 				DC1E0C1F244FE21C00F26C19 /* JetBrainsMono-Italic.ttf in Resources */,
 				DC606A882449375500E45C89 /* ParameterView.xib in Resources */,
-				DC6D9ED4244CAAE1009377E6 /* TryItOutController.xib in Resources */,
 				DCC545642446E4C300B0C61D /* LaunchScreen.storyboard in Resources */,
 				DC824C1724506EA50010DDC4 /* RequestHeaderController.xib in Resources */,
 				DCC545612446E4C300B0C61D /* Assets.xcassets in Resources */,
@@ -365,6 +367,7 @@
 				DC72AC5D2448A27400BD0425 /* MasterAPICell.xib in Resources */,
 				DCC5455F2446E4C000B0C61D /* Main.storyboard in Resources */,
 				DC606A802448438C00E45C89 /* APIViewController.xib in Resources */,
+				DC55CA832451BA2800537E32 /* TryItOut.storyboard in Resources */,
 				DC1E0C12244FD4BC00F26C19 /* CodeThemeViewController.xib in Resources */,
 				DC1E0C1E244FE21C00F26C19 /* JetBrainsMono-Bold.ttf in Resources */,
 				DC6D9ED0244CA9DB009377E6 /* RequestParameterView.xib in Resources */,
@@ -445,6 +448,7 @@
 				DC606A702448027C00E45C89 /* API.swift in Sources */,
 				DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */,
 				DC824C1624506EA50010DDC4 /* RequestHeaderController.swift in Sources */,
+				DC55CA812451B99400537E32 /* TryItOutSceneDelegate.swift in Sources */,
 				DC824C1924507E390010DDC4 /* Protocols.swift in Sources */,
 				DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */,
 				DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */,

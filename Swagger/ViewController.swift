@@ -101,7 +101,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 apiController.definitions = definitions
             }
             let nav = UINavigationController(rootViewController: apiController)
-            splitViewController?.showDetailViewController(nav, sender: nav)
+            splitViewController?.showDetailViewController(apiController, sender: apiController)
         }
         
     }
