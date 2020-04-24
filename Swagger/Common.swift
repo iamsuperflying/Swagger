@@ -16,5 +16,7 @@ enum Algorithm {
 }
 
 extension NSObject {
-    
+    class func stringFromClass() -> String {
+        String(describing:self)
+    }
 }

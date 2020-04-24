@@ -18,7 +18,6 @@ protocol CodeThemeDelegate {
     func textView() -> UITextView
 }
 
-
 final class Redis: NSObject {
     
     static let standard = Redis()
@@ -28,6 +27,7 @@ final class Redis: NSObject {
     }
     
     var definitions = Dictionary<String, HTTPObject>()
+    var currentRequest: String?
     
     let highlightr = Highlightr()
     

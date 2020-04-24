@@ -12,6 +12,7 @@ import HandyJSON
 class HTTPObject: HandyJSON {
     
     var type = "object"
+    var required: [String]?
     var properties: Array<Property>?
     
     var title = ""

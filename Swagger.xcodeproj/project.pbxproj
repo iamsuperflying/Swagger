@@ -35,12 +35,12 @@
 		DC606A882449375500E45C89 /* ParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC606A872449375500E45C89 /* ParameterView.xib */; };
 		DC606A8A24497A9600E45C89 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC606A8924497A9600E45C89 /* Items.swift */; };
 		DC606A8C244994F500E45C89 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DC606A8B244994F400E45C89 /* Settings.bundle */; };
+		DC60D5EA2452D750004E1376 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC60D5E92452D750004E1376 /* PostsViewModel.swift */; };
+		DC60D5EC2452D7D4004E1376 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC60D5EB2452D7D4004E1376 /* Post.swift */; };
 		DC6D9EC7244C98B9009377E6 /* TreeFirstSearchMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9EC5244C98B9009377E6 /* TreeFirstSearchMenuController.swift */; };
 		DC6D9EC8244C98B9009377E6 /* TreeFirstSearchMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9EC6244C98B9009377E6 /* TreeFirstSearchMenuController.xib */; };
 		DC6D9ECB244C9FD8009377E6 /* TreeFSImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9EC9244C9FD8009377E6 /* TreeFSImageController.swift */; };
 		DC6D9ECC244C9FD8009377E6 /* TreeFSImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9ECA244C9FD8009377E6 /* TreeFSImageController.xib */; };
-		DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */; };
-		DC6D9ED0244CA9DB009377E6 /* RequestParameterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */; };
 		DC6D9ED3244CAAE1009377E6 /* TryItOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */; };
 		DC6D9ED6244CAC27009377E6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */; };
 		DC6D9F3B244DD272009377E6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6D9F3A244DD272009377E6 /* Common.swift */; };
@@ -59,6 +59,14 @@
 		DCC5455F2446E4C000B0C61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC5455D2446E4C000B0C61D /* Main.storyboard */; };
 		DCC545612446E4C300B0C61D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC545602446E4C300B0C61D /* Assets.xcassets */; };
 		DCC545642446E4C300B0C61D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC545622446E4C300B0C61D /* LaunchScreen.storyboard */; };
+		DCD3D02924527CAA0009CFD7 /* TryItOutBoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3D02824527CAA0009CFD7 /* TryItOutBoolView.swift */; };
+		DCD3D02B24527CB60009CFD7 /* TryItOutBoolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD3D02A24527CB60009CFD7 /* TryItOutBoolView.xib */; };
+		DCD3D02D24527CFB0009CFD7 /* TryItOutInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3D02C24527CFB0009CFD7 /* TryItOutInputView.swift */; };
+		DCD3D02F24527D080009CFD7 /* TryItOutInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD3D02E24527D080009CFD7 /* TryItOutInputView.xib */; };
+		DCD3D03124527D330009CFD7 /* TryItOutEnumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3D03024527D330009CFD7 /* TryItOutEnumView.swift */; };
+		DCD3D03324527D400009CFD7 /* TryItOutEnumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD3D03224527D400009CFD7 /* TryItOutEnumView.xib */; };
+		DCD3D035245282490009CFD7 /* TryItOutPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3D034245282490009CFD7 /* TryItOutPropertyView.swift */; };
+		DCD3D0372452842D0009CFD7 /* TryItOutPropertyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3D0362452842D0009CFD7 /* TryItOutPropertyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,12 +99,12 @@
 		DC606A872449375500E45C89 /* ParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterView.xib; sourceTree = "<group>"; };
 		DC606A8924497A9600E45C89 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		DC606A8B244994F400E45C89 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Swagger/Settings.bundle; sourceTree = "<group>"; };
+		DC60D5E92452D750004E1376 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		DC60D5EB2452D7D4004E1376 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DC6D9EC5244C98B9009377E6 /* TreeFirstSearchMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeFirstSearchMenuController.swift; sourceTree = "<group>"; };
 		DC6D9EC6244C98B9009377E6 /* TreeFirstSearchMenuController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeFirstSearchMenuController.xib; sourceTree = "<group>"; };
 		DC6D9EC9244C9FD8009377E6 /* TreeFSImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeFSImageController.swift; sourceTree = "<group>"; };
 		DC6D9ECA244C9FD8009377E6 /* TreeFSImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeFSImageController.xib; sourceTree = "<group>"; };
-		DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameterView.swift; sourceTree = "<group>"; };
-		DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestParameterView.xib; sourceTree = "<group>"; };
 		DC6D9ED1244CAAE1009377E6 /* TryItOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutController.swift; sourceTree = "<group>"; };
 		DC6D9ED5244CAC27009377E6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		DC6D9F3A244DD272009377E6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -118,6 +126,14 @@
 		DCC545632446E4C300B0C61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC545652446E4C300B0C61D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC5456B2446E4D600B0C61D /* Swagger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Swagger.entitlements; sourceTree = "<group>"; };
+		DCD3D02824527CAA0009CFD7 /* TryItOutBoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutBoolView.swift; sourceTree = "<group>"; };
+		DCD3D02A24527CB60009CFD7 /* TryItOutBoolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryItOutBoolView.xib; sourceTree = "<group>"; };
+		DCD3D02C24527CFB0009CFD7 /* TryItOutInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutInputView.swift; sourceTree = "<group>"; };
+		DCD3D02E24527D080009CFD7 /* TryItOutInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryItOutInputView.xib; sourceTree = "<group>"; };
+		DCD3D03024527D330009CFD7 /* TryItOutEnumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutEnumView.swift; sourceTree = "<group>"; };
+		DCD3D03224527D400009CFD7 /* TryItOutEnumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryItOutEnumView.xib; sourceTree = "<group>"; };
+		DCD3D034245282490009CFD7 /* TryItOutPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutPropertyView.swift; sourceTree = "<group>"; };
+		DCD3D0362452842D0009CFD7 /* TryItOutPropertyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItOutPropertyViewModel.swift; sourceTree = "<group>"; };
 		ED7F9379D442A856FFD5BEBF /* Pods-Swagger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swagger.release.xcconfig"; path = "Target Support Files/Pods-Swagger/Pods-Swagger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +169,9 @@
 		DC1E0C13244FE1FE00F26C19 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				DCC545602446E4C300B0C61D /* Assets.xcassets */,
+				DCC545622446E4C300B0C61D /* LaunchScreen.storyboard */,
+				DCC545652446E4C300B0C61D /* Info.plist */,
 				DCC5456B2446E4D600B0C61D /* Swagger.entitlements */,
 				DCC545572446E4C000B0C61D /* AppDelegate.swift */,
 				DCC545592446E4C000B0C61D /* SceneDelegate.swift */,
@@ -206,6 +225,7 @@
 		DC606A83244844C700E45C89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DCD3D0362452842D0009CFD7 /* TryItOutPropertyViewModel.swift */,
 				DC606A6B2446F5A400E45C89 /* MetaResponse.swift */,
 				DC606A6D2446F60D00E45C89 /* Tag.swift */,
 				DC606A6F2448027C00E45C89 /* API.swift */,
@@ -239,15 +259,23 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		DC60D5E82452D735004E1376 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC60D5E92452D750004E1376 /* PostsViewModel.swift */,
+				DC60D5EB2452D7D4004E1376 /* Post.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		DC72AC592448A24A00BD0425 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DCD3D02724527C650009CFD7 /* TryItOutViews */,
 				DC72AC5A2448A26900BD0425 /* MasterAPICell.swift */,
 				DC72AC5C2448A27400BD0425 /* MasterAPICell.xib */,
 				DC606A852449374900E45C89 /* ParameterView.swift */,
 				DC606A872449375500E45C89 /* ParameterView.xib */,
-				DC6D9ECD244CA9CF009377E6 /* RequestParameterView.swift */,
-				DC6D9ECF244CA9DB009377E6 /* RequestParameterView.xib */,
 				DCA44DC6245098C2007380FD /* CodeView.swift */,
 			);
 			path = View;
@@ -275,6 +303,7 @@
 		DCC545562446E4C000B0C61D /* Swagger */ = {
 			isa = PBXGroup;
 			children = (
+				DC60D5E82452D735004E1376 /* ViewModel */,
 				DC1E0C28245015D700F26C19 /* Protocol&Extension */,
 				DC1E0C13244FE1FE00F26C19 /* Support */,
 				DC559E1A244E77440035BA95 /* Other */,
@@ -284,12 +313,23 @@
 				DCC5455B2446E4C000B0C61D /* ViewController.swift */,
 				DCC5455D2446E4C000B0C61D /* Main.storyboard */,
 				DC55CA822451BA2800537E32 /* TryItOut.storyboard */,
-				DCC545602446E4C300B0C61D /* Assets.xcassets */,
-				DCC545622446E4C300B0C61D /* LaunchScreen.storyboard */,
-				DCC545652446E4C300B0C61D /* Info.plist */,
 				DC6D9F3C244DDAF0009377E6 /* Reformer.swift */,
 			);
 			path = Swagger;
+			sourceTree = "<group>";
+		};
+		DCD3D02724527C650009CFD7 /* TryItOutViews */ = {
+			isa = PBXGroup;
+			children = (
+				DCD3D034245282490009CFD7 /* TryItOutPropertyView.swift */,
+				DCD3D02824527CAA0009CFD7 /* TryItOutBoolView.swift */,
+				DCD3D02A24527CB60009CFD7 /* TryItOutBoolView.xib */,
+				DCD3D02C24527CFB0009CFD7 /* TryItOutInputView.swift */,
+				DCD3D02E24527D080009CFD7 /* TryItOutInputView.xib */,
+				DCD3D03024527D330009CFD7 /* TryItOutEnumView.swift */,
+				DCD3D03224527D400009CFD7 /* TryItOutEnumView.xib */,
+			);
+			path = TryItOutViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,23 +394,25 @@
 			files = (
 				DC1E0C1F244FE21C00F26C19 /* JetBrainsMono-Italic.ttf in Resources */,
 				DC606A882449375500E45C89 /* ParameterView.xib in Resources */,
+				DCD3D02B24527CB60009CFD7 /* TryItOutBoolView.xib in Resources */,
 				DCC545642446E4C300B0C61D /* LaunchScreen.storyboard in Resources */,
 				DC824C1724506EA50010DDC4 /* RequestHeaderController.xib in Resources */,
 				DCC545612446E4C300B0C61D /* Assets.xcassets in Resources */,
 				DC1E0C25244FE21C00F26C19 /* JetBrainsMono-Bold-Italic.ttf in Resources */,
 				DC1E0C22244FE21C00F26C19 /* JetBrainsMono-ExtraBold.ttf in Resources */,
 				DC6D9ECC244C9FD8009377E6 /* TreeFSImageController.xib in Resources */,
+				DCD3D03324527D400009CFD7 /* TryItOutEnumView.xib in Resources */,
 				DC6D9EC8244C98B9009377E6 /* TreeFirstSearchMenuController.xib in Resources */,
 				DC1E0C23244FE21C00F26C19 /* JetBrainsMono-ExtraBold-Italic.ttf in Resources */,
 				DC1E0C21244FE21C00F26C19 /* JetBrainsMono-Medium-Italic.ttf in Resources */,
 				DC1E0C24244FE21C00F26C19 /* JetBrainsMono-Medium.ttf in Resources */,
+				DCD3D02F24527D080009CFD7 /* TryItOutInputView.xib in Resources */,
 				DC72AC5D2448A27400BD0425 /* MasterAPICell.xib in Resources */,
 				DCC5455F2446E4C000B0C61D /* Main.storyboard in Resources */,
 				DC606A802448438C00E45C89 /* APIViewController.xib in Resources */,
 				DC55CA832451BA2800537E32 /* TryItOut.storyboard in Resources */,
 				DC1E0C12244FD4BC00F26C19 /* CodeThemeViewController.xib in Resources */,
 				DC1E0C1E244FE21C00F26C19 /* JetBrainsMono-Bold.ttf in Resources */,
-				DC6D9ED0244CA9DB009377E6 /* RequestParameterView.xib in Resources */,
 				DC606A8C244994F500E45C89 /* Settings.bundle in Resources */,
 				DC1E0C20244FE21C00F26C19 /* JetBrainsMono-Regular.ttf in Resources */,
 			);
@@ -432,18 +474,25 @@
 				DC606A782448405B00E45C89 /* Responses.swift in Sources */,
 				DC6D9ED3244CAAE1009377E6 /* TryItOutController.swift in Sources */,
 				DCC5455C2446E4C000B0C61D /* ViewController.swift in Sources */,
+				DCD3D0372452842D0009CFD7 /* TryItOutPropertyViewModel.swift in Sources */,
 				DC6D9ED6244CAC27009377E6 /* ViewExtension.swift in Sources */,
 				DC606A6C2446F5A400E45C89 /* MetaResponse.swift in Sources */,
+				DCD3D02924527CAA0009CFD7 /* TryItOutBoolView.swift in Sources */,
 				DC606A7C2448411400E45C89 /* Scheme.swift in Sources */,
 				DC606A7A244840B600E45C89 /* Success.swift in Sources */,
 				DC6D9F3D244DDAF0009377E6 /* Reformer.swift in Sources */,
+				DCD3D035245282490009CFD7 /* TryItOutPropertyView.swift in Sources */,
+				DC60D5EC2452D7D4004E1376 /* Post.swift in Sources */,
 				DC72AC5524487B9F00BD0425 /* HTTPObject.swift in Sources */,
 				DC606A6E2446F60D00E45C89 /* Tag.swift in Sources */,
 				DC606A7624483F8200E45C89 /* Parameter.swift in Sources */,
 				DC6D9ECB244C9FD8009377E6 /* TreeFSImageController.swift in Sources */,
+				DC60D5EA2452D750004E1376 /* PostsViewModel.swift in Sources */,
+				DCD3D02D24527CFB0009CFD7 /* TryItOutInputView.swift in Sources */,
 				DCC545582446E4C000B0C61D /* AppDelegate.swift in Sources */,
 				DC1E0C11244FD4BC00F26C19 /* CodeThemeViewController.swift in Sources */,
 				DC606A862449374900E45C89 /* ParameterView.swift in Sources */,
+				DCD3D03124527D330009CFD7 /* TryItOutEnumView.swift in Sources */,
 				DC606A74244826F000E45C89 /* RequestMethod.swift in Sources */,
 				DC606A702448027C00E45C89 /* API.swift in Sources */,
 				DCC5455A2446E4C000B0C61D /* SceneDelegate.swift in Sources */,
@@ -451,7 +500,6 @@
 				DC55CA812451B99400537E32 /* TryItOutSceneDelegate.swift in Sources */,
 				DC824C1924507E390010DDC4 /* Protocols.swift in Sources */,
 				DC72AC5B2448A26900BD0425 /* MasterAPICell.swift in Sources */,
-				DC6D9ECE244CA9CF009377E6 /* RequestParameterView.swift in Sources */,
 				DC559E1C244E77ED0035BA95 /* Redis.swift in Sources */,
 				DC606A7F2448438C00E45C89 /* APIViewController.swift in Sources */,
 				DCA44DC7245098C2007380FD /* CodeView.swift in Sources */,

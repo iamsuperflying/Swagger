@@ -86,25 +86,15 @@ class APIViewController: UIViewController {
     }
     
     @IBAction func tryItOut(_ sender: Any) {
-        
-   
+    
         let activity = NSUserActivity(activityType: "TryItOut")
         
-        UIApplication.shared.requestSceneSessionActivation(UIApplication.shared.openSessions.first, userActivity: activity, options: nil) { (error) in
+        Redis.standard.currentRequest = api?.httpMethod?.request
+        
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil) { (error) in
             //
             print("error is " + error.localizedDescription)
         }
-        
-//        let tryItOutController = TryItOutController.fromNIb()
-//        let window = UIWindow(frame: UIScreen.main.bounds)
-//        window.rootViewController = tryItOutController
-//        window.makeKeyAndVisible()
-        
-//        let tryItOutController = TryItOutController.fromNIb()
-//            // TryItOutController.init(nibName: "TryItOutController", bundle: Bundle.main)
-//
-//        present(tryItOutController, animated: true, completion: nil)
-//        navigationController?.pushViewController(tryItOutController, animated: true)
     }
     @IBAction func btnCustomMenuClick(sender: UIButton) {
         

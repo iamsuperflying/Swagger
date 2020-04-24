@@ -65,7 +65,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return self.tags.count
+        return tags.count
         
     }
 

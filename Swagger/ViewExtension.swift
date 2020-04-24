@@ -10,8 +10,13 @@ import UIKit
 
 extension UIView {
     class func fromNib() -> Self {
-        return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as! Self
+        Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as! Self
     }
+    
+    class func toNib() -> UINib {
+        UINib(nibName: self.stringFromClass(), bundle: Bundle.main)
+    }
+    
 }
 
 extension UIViewController {
