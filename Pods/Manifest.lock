@@ -2,23 +2,37 @@ PODS:
   - Alamofire (5.1.0)
   - HandyJSON (5.0.1)
   - Highlightr (2.1.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
   - HandyJSON (~> 5.0.1)
   - Highlightr
+  - RxCocoa (~> 5.0)
+  - RxSwift (~> 5.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - HandyJSON
     - Highlightr
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   Highlightr: 595f3e100737c8de41113385da8bd0b5b65212c6
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 1c5bf10dcbfa3aabca039d60551cc524cde19e0c
+PODFILE CHECKSUM: bec1bee6da6c5f1199b2d250a1d93f22345d55fe
 
 COCOAPODS: 1.8.3
