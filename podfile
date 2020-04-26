@@ -7,5 +7,7 @@ target 'Swagger' do
     pod 'Alamofire', '~> 5.1'
     pod 'HandyJSON', '~> 5.0.1'
     pod 'Highlightr'
+    pod 'RxSwift', '~> 5.0'
+    pod 'RxCocoa', '~> 5.0'
 
 end
