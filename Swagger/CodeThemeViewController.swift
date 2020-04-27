@@ -7,42 +7,34 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class CodeThemeViewController: UIViewController {
     
     @IBOutlet weak var themeListView: UITableView!
     let availableThemes:[String] = Redis.standard.availableThemes
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.themeListView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
-    }
-
-}
-
-extension CodeThemeViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 1
+        self.themeListView.register(cellClass: UITableViewCell.self)
         
+        let themesObservable = Observable.from(optional: availableThemes)
+        themesObservable.bind(to:
+            themeListView.rx.items(cellIdentifier: UITableViewCell.stringFromClass(),
+                                                         cellType: UITableViewCell.self)) { (row, text, cell) in
+            cell.textLabel?.text = text
+        }.disposed(by: disposeBag)
+        
+        themeListView.rx.itemSelected.bind{ indexPath in
+            Redis.standard.changeTheme(theme: self.availableThemes[indexPath.row])
+        }.disposed(by: disposeBag)
+
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableThemes.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = availableThemes[indexPath.row]
-        return cell;
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Redis.standard.changeTheme(theme: availableThemes[indexPath.row])
-    }
 }

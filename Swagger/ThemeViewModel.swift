@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class ThemeViewModel {
+    
+    let theme: Observable<String>?
+    
+    init(theme: Observable<String>) {
+        self.theme = theme
+    }
+    
+}

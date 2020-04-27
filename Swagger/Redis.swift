@@ -31,9 +31,7 @@ final class Redis: NSObject {
     
     let highlightr = Highlightr()
     
-    private var theme: String {
-        (UserDefaults.standard.value(forKey: "theme") as? String ) ?? "xcode"
-    }
+    var theme: String = (UserDefaults.standard.value(forKey: "theme") as? String ) ?? "xcode"
     
     private lazy var delegates: [CodeThemeDelegate]? = {
         return [CodeThemeDelegate]()

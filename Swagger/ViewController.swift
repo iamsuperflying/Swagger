@@ -8,6 +8,11 @@
 
 import UIKit
 import Alamofire
+import Moya
+import RxCocoa
+import RxSwift
+import RxDataSources
+//import data
 
 class ViewController: UIViewController {
     
@@ -28,13 +33,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tagsView: UITableView!
     
+    private var dataSource = RxTableViewSectionedReloadDataSource<SectionOfTags>(configureCell: { (dataSource, tableView, indexPath, tag) in
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: MasterAPICell.stringFromClass(), for: indexPath) as? MasterAPICell else { return UITableViewCell() }
+       
+        
+        
+//        cell.titleLabel.text = self.metaResponse?.pathsMapping[tag.name]?[indexPath.row].httpMethod?.summary
+//        cell.detailLabel.text = self.metaResponse?.pathsMapping[tag.name]?[indexPath.row].name
+       
+       return cell
+    })
+    
+//    private lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfTags>.ConfigureCell = { [weak self] (dataSource, tableView, indexPath, tag) in
+//           guard let cell = tableView.dequeueReusableCell(withIdentifier: MasterAPICell.stringFromClass(), for: indexPath) as? MasterAPICell else { return UITableViewCell() }
+//
+//           cell.titleLabel.text = self?.metaResponse?.pathsMapping[tag.name]?[indexPath.row].httpMethod?.summary
+//           cell.detailLabel.text = self?.metaResponse?.pathsMapping[tag.name]?[indexPath.row].name
+//
+//           return cell
+//        }
+    
+    var tagsSubject = PublishSubject<[Tag]>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         tagsView.register(UINib(nibName:identifier, bundle: nibBundle), forCellReuseIdentifier:identifier)
-        requestAPI()
+         requestAPI()
+        
+//        let tagsObservable = Observable.from(optional: availableThemes)
+//        themesObservable.bind(to:
+//            themeListView.rx.items(cellIdentifier: UITableViewCell.stringFromClass(),
+//                                                         cellType: UITableViewCell.self)) { (row, text, cell) in
+//            cell.textLabel?.text = text
+//        }.disposed(by: disposeBag)
+//
+//        themeListView.rx.itemSelected.bind{ indexPath in
+//            Redis.standard.changeTheme(theme: self.availableThemes[indexPath.row])
+//        }.disposed(by: disposeBag)
+//
+//        /// RxTableViewSectionedReloadDataSource
+//        tagsView.register(cellClass: MasterAPICell.self, isNib: true)
+//
+//        tagsView.rx.items(cellIdentifier: MasterAPICell.stringFromClass(), cellType: MasterAPICell.Type) { (row, text, cell) in
+//
+//        })
+        
+        RxTableViewSectionedReloadDataSource
+        
+        searchBar.searchTextField.rx.text.subscribe(onNext: { (ttt) in
+          print("ttt is \(ttt)")
+        })
 
     }
     
@@ -101,7 +152,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 apiController.definitions = definitions
             }
             let nav = UINavigationController(rootViewController: apiController)
-            splitViewController?.showDetailViewController(apiController, sender: apiController)
+            splitViewController?.showDetailViewController(nav, sender: nav)
         }
         
     }
@@ -135,5 +186,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         self.navigationController?.isNavigationBarHidden = false
     }
     
+}
+
+extension ViewController {
+    func test() {
+
+    }
 }
 

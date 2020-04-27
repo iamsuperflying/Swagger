@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+    
     class func fromNib() -> Self {
         Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.last as! Self
     }
@@ -17,6 +18,22 @@ extension UIView {
         UINib(nibName: self.stringFromClass(), bundle: Bundle.main)
     }
     
+}
+
+extension UITableView {
+    
+    func register(cellClass: AnyClass?, isNib:Bool = false) {
+        
+        guard let cls = cellClass else { return }
+        
+        let stringFromClass = String(describing:cls)
+        
+        if isNib {
+            self.register(UINib(nibName: stringFromClass, bundle: Bundle.main), forCellReuseIdentifier: stringFromClass)
+            return
+        }
+        self.register(cls, forCellReuseIdentifier: stringFromClass)
+    }
 }
 
 extension UIViewController {
